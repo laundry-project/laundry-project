@@ -4,8 +4,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 
-
-
 const Home = () => {
   return (
     <div>
@@ -19,7 +17,7 @@ const Home = () => {
               className="img w-100"
             />
             <MDBBtn color="warning">
-              <Link to="./FindLaundry">Find Laundry</Link>
+              <Link to="/FindLaundry">Find Laundry</Link>
             </MDBBtn>
           </MDBCol>
         </MDBRow>

@@ -1,18 +1,22 @@
 import React from "react";
 import {  MDBRow, MDBCol, MDBIcon } from "mdbreact";
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 const About = () => {
   return (
+    <div>
+        <Navbar/>
       <section className="text-center my-5">
-        <h2 className="h1-responsive font-weight-bold my-5">
-          Mengapa Harus Fresh and Clean Laundry
-        </h2>
+        <h1 className="h1-responsive font-weight-bold my-5">
+          Company Profile
+        </h1>
         <p className="lead grey-text w-responsive mx-auto mb-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam.
-          
-        </p>
+        Merupakan unit usaha yang dikelola oleh kinerja handal dan berpengalaman dalam memberikan pelayanan yang bergerak di bidang laundry atau binatu, termasuk juga konsep cuci dan seterika per kilogram. Memiliki layanan unggulan yaitu pencucian dan perawatan pakaian satuan premium dengan standarisasi fabric care dan sudah menggunakan teknologi ionisasi untuk wet cleaning. Selain itu Fresh and Clean Laundry juga memiliki lini usaha perawatan sepatu dan tas branded, serta cuci sofa/spring bed dengan didukung peralatan canggih dan modern.
+      </p>
+        <h2 className="h1-responsive font-weight-bold my-5">
+          Mengapa Harus Fresh and Clean Laundry?
+        </h2>
         <MDBRow>
           <MDBCol md="4">
             <MDBIcon icon="medal" size="3x" className="blue-text" />
@@ -62,7 +66,11 @@ const About = () => {
           </MDBCol>
         </MDBRow>
       </section>
+      <Footer/>
+    </div>
   );
 }
+
+
 
 export default About;
