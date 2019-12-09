@@ -1,62 +1,42 @@
 import React from "react";
-import { withRouter } from "react-router";
-import { Button, Card, Image, Modal } from "semantic-ui-react";
-import logo from "../assets/images/fresh.jpg";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import "semantic-ui-css/semantic.min.css";
+import { Button, Header, Dropdown, Modal } from "semantic-ui-react";
 
+const JenisCuci = [
+  {
+    key: "Cuci Baju",
+    text: "Cuci Baju",
+    value: "Cuci Baju"
+  },
+  {
+    key: "Cuci Sepatu",
+    text: "Cuci Sepatu",
+    value: "Cuci Sepatu"
+  }
+];
 
-const FindLaundry = () => (
-  <div>
-    <Navbar />
-    <h1>Temukan Cabang Fresh Laundry Terdekat</h1>
-    <Card.Group>
-      <Card>
-        <Card.Content>
-          <Image src={logo} />
-          <Card.Header>Fresh laundry - Kemang</Card.Header>
-          <Card.Description>Fresh Laundry Cabang Kemang</Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <div className="ui two buttons">
-            <Modal
-              trigger={<Button basic color="green">Info</Button>}
-            ></Modal>
-          </div>
-        </Card.Content>
-      </Card>
-      <Card>
-        <Card.Content>
-          <Image src={logo} />
-          <Card.Header>Fresh laundry - Tebet</Card.Header>
-          <Card.Description>Fresh Laundry Cabang Tebet</Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <div className="ui two buttons">
-            <Button basic color="green">
-              Info
-            </Button>
-          </div>
-        </Card.Content>
-      </Card>
-      <Card>
-        <Card.Content>
-          <Image src={logo} />
-          <Card.Header>Fresh laundry - Grogol</Card.Header>
-          <Card.Description>Fresh Laundry Cabang Grogol</Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <div className="ui two buttons">
-            <Button basic color="green">
-              Info
-            </Button>
-          </div>
-        </Card.Content>
-      </Card>
-    </Card.Group>
-    <Footer />
-  </div>
+const BookLaundry = () => (
+  <Modal
+    trigger={
+      <Button basic color="blue">
+        Book
+      </Button>
+    }
+  >
+    <Modal.Header>Pemesanan Laundry</Modal.Header>
+    <Modal.Content image>
+      <Modal.Description>
+        <Header>Silahkan Isi Data Laundry Anda !</Header>
+        <Dropdown
+        text='jenis'
+          placeholder="Jenis Cuci"
+          fluid
+          selection
+          options={JenisCuci}
+        />
+        
+      </Modal.Description>
+    </Modal.Content>
+  </Modal>
 );
 
-export default withRouter(FindLaundry);
+export default BookLaundry;

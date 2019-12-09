@@ -1,10 +1,12 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { Button, Card, Image, Modal } from "semantic-ui-react";
+
+
 import logo from "../components/images/fresh.jpg";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import "semantic-ui-css/semantic.min.css";
+import BookModal from './BookLaundry'
 
 
 
@@ -28,6 +30,7 @@ const FindLaundry = () => (
                 </Button>
               }
             ></Modal>
+            <BookModal />
           </div>
         </Card.Content>
       </Card>
