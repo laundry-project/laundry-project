@@ -2,6 +2,7 @@ import React from "react";
 import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardImage } from "mdbreact";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Team from "./Team";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+    <Team/>
   <Footer />
     </div>
   );
