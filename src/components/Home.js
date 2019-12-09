@@ -1,5 +1,7 @@
 import React from "react";
-import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardImage } from "mdbreact";
+import { MDBBtn, MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { Image } from "semantic-ui-react";
+import Logo from "../components/images/laundry.png";
 
 const Home = () => {
   return (
@@ -7,10 +9,8 @@ const Home = () => {
       <MDBContainer className="mt-5 text-center">
         <MDBRow>
           <MDBCol>
-            <MDBCardImage
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_mELUH0EqYeiry3LpUWN9lxVh3Lr6YbeAXkf59JvJavxcnyRbCQ&s"
-              className="img w-100"
-            />
+            <Image src={Logo} />
+            <br />
             <MDBBtn color="warning">Find Laundry Store</MDBBtn>
           </MDBCol>
         </MDBRow>
