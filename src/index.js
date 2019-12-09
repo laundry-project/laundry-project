@@ -35,7 +35,7 @@ ReactDOM.render(
       <Route path="/about">
         <About />
       </Route >
-      <Route path ="/find-laundry">
+      <Route path ="/FindLaundry">
       <FindLaundry/>
       </Route>
     </Switch>

@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 
+
+
 const Home = () => {
   return (
     <div>
@@ -16,9 +18,9 @@ const Home = () => {
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_mELUH0EqYeiry3LpUWN9lxVh3Lr6YbeAXkf59JvJavxcnyRbCQ&s"
               className="img w-100"
             />
-            <Link to="/find-laundry">
-              <MDBBtn color="warning">Find Laundry Store</MDBBtn>
-            </Link>
+            <MDBBtn color="warning">
+              <Link to="./FindLaundry">Find Laundry</Link>
+            </MDBBtn>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
