@@ -22,8 +22,7 @@ const Home = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-
-      <Footer />
+  <Footer />
     </div>
   );
 };
