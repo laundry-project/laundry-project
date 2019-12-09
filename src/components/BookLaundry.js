@@ -7,7 +7,6 @@ import Footer from "./Footer";
 import "semantic-ui-css/semantic.min.css";
 
 
-
 const FindLaundry = () => (
   <div>
     <Navbar />
@@ -22,11 +21,7 @@ const FindLaundry = () => (
         <Card.Content extra>
           <div className="ui two buttons">
             <Modal
-              trigger={
-                <Button basic color="green">
-                  Info
-                </Button>
-              }
+              trigger={<Button basic color="green">Info</Button>}
             ></Modal>
           </div>
         </Card.Content>
