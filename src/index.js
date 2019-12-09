@@ -14,6 +14,7 @@ import Price from "./components/Price";
 import About from "./components/About";
 import FindLaundry from "./components/FindLaundry";
 import Register from "./components/Register";
+import ContactUs from "./components/ContactUs"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -38,6 +39,9 @@ ReactDOM.render(
       </Route>
       <Route path="/register">
         <Register />
+      </Route>
+      <Route path="/ContactUs">
+        <ContactUs />
       </Route>
     </Route>
   </BrowserRouter>,

@@ -10,7 +10,7 @@ const Services = () => {
       <section className="text-center my-5">
         <h2 className="h1-responsive font-weight-bold my-5">OUR SERVICES</h2>
 
-        <MDBRow className="text-center">
+        <MDBRow className="text-center mx-auto">
           <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
             <MDBView className="overlay rounded z-depth-1" waves>
               <img

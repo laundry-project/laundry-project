@@ -17,7 +17,7 @@ const Home = () => {
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_mELUH0EqYeiry3LpUWN9lxVh3Lr6YbeAXkf59JvJavxcnyRbCQ&s"
               className="img w-100"
             />
-            <MDBBtn color="warning">
+            <MDBBtn color="white">
               <Link to="/FindLaundry">Find Laundry</Link>
             </MDBBtn>
           </MDBCol>
