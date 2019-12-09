@@ -16,6 +16,7 @@ import FindLaundry from "./components/FindLaundry";
 import Register from "./components/Register";
 import BookLaundry from "./components/BookLaundry"
 import * as serviceWorker from "./serviceWorker";
+import ContactUs from "./components/ContactUs"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -43,6 +44,9 @@ ReactDOM.render(
       </Route>
       <Route path="/BookLaundry">
         <BookLaundry />
+        </Route>
+      <Route path="/ContactUs">
+        <ContactUs />
       </Route>
     </Route>
   </BrowserRouter>,
