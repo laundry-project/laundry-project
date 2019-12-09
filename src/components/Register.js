@@ -6,8 +6,6 @@ import Footer from "./Footer";
 const FormPage = () => {
   return (
     <MDBContainer>
-      <Navbar />
-
       <MDBRow>
         <MDBCol md="6">
           <form>
