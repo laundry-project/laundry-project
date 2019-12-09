@@ -25,10 +25,10 @@ const Services = () => {
             <MDBCardBody className="pb-0">
               <h4 className="font-weight-bold my-3">Order Langsung Ditempat</h4>
               <p className="grey-text">
-                Customer bisa mdatang langsung ke cabang laundry yang
-                diinginkan. Pilih jenis layanan laundry, kiloan atau satuan.
-                Customer akan diberikan nota sebagai bukti untuk pengambilan
-                laundry sesuai waktu dan layanan laundry yang dipilih.
+                Customer bisa datang langsung ke cabang laundry yang diinginkan.
+                Pilih jenis layanan laundry kiloan atau satuan. Customer akan di
+                berikan nota sebagai bukti untuk pengambilan laundry sesuai
+                waktu dan layanan laundry yang dipilih.
               </p>
             </MDBCardBody>
           </MDBCol>
@@ -48,11 +48,11 @@ const Services = () => {
                 Cuci, Kering dan Setrika{" "}
               </h4>
               <p className="grey-text">
-                Pakaian customer yang telah ditimbang siap buat dilaundry.
+                Pakaian customer yang telah di timbang siap buat di laundry.
                 Pegawai akan segera melakukan pencucian dan pengeringan langsung
                 ditempat. Menggunakan teknologi dan bahan yang ramah lingkungan.
                 Setelah selesai, pakaian akan langsung disetrika dan dipacking
-                rapi
+                rapi.
               </p>
             </MDBCardBody>
           </MDBCol>
@@ -72,7 +72,7 @@ const Services = () => {
               <p className="grey-text">
                 Pelayanan laundry dilakukan dengan serius sesuai jenis layanan
                 yang diinginkan customer. Setelah rapi dipacking, pakaian siap
-                diserahkan ke customer dengan membawa nota pembayaran
+                diserahkan ke customer dengan membawa nota pembayaran.
               </p>
             </MDBCardBody>
           </MDBCol>
