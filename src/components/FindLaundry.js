@@ -4,6 +4,9 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "semantic-ui-css/semantic.min.css";
 import { MDBRow, MDBCol, MDBIcon, MDBBtn } from "mdbreact";
+import { Link } from "react-router-dom";
+
+
 
 const FindLaundry = () => {
   return (
@@ -33,7 +36,7 @@ const FindLaundry = () => {
                   Ut enim ad minim veniam.
                 </p>
                 <MDBBtn color="primary" size="sm">
-                  Learn more
+                  <Link to= "./BookLaundry">Booking</Link>
                 </MDBBtn>
               </MDBCol>
             </MDBRow>

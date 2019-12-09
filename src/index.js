@@ -14,6 +14,7 @@ import Price from "./components/Price";
 import About from "./components/About";
 import FindLaundry from "./components/FindLaundry";
 import Register from "./components/Register";
+import BookLaundry from "./components/BookLaundry"
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
@@ -39,6 +40,9 @@ ReactDOM.render(
       </Route>
       <Route path="/register">
         <Register />
+      </Route>
+      <Route path="/BookLaundry">
+        <BookLaundry />
       </Route>
     </Route>
   </BrowserRouter>,

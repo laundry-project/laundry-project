@@ -1,42 +1,42 @@
 import React from "react";
-import { Button, Header, Dropdown, Modal } from "semantic-ui-react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { Dropdown } from "semantic-ui-react";
+import { MDBInput, MDBBtn } from "mdbreact";
 
-const JenisCuci = [
-  {
-    key: "Cuci Baju",
-    text: "Cuci Baju",
-    value: "Cuci Baju"
-  },
-  {
-    key: "Cuci Sepatu",
-    text: "Cuci Sepatu",
-    value: "Cuci Sepatu"
-  }
-];
-
-const BookLaundry = () => (
-  <Modal
-    trigger={
-      <Button basic color="blue">
-        Book
-      </Button>
+function BookLaundry() {
+  const options = [
+    { key: "Cuci Kering", text: "Cuci kering", value: "Cuci Kering" },
+    { key: "Setrika", text: "Setrika", value: "Setrika" },
+    {
+      key: "Cuci Kering + Setrika",
+      text: "Cuci Kering + Setrika",
+      value: "Cuci Kering + Setrika"
     }
-  >
-    <Modal.Header>Pemesanan Laundry</Modal.Header>
-    <Modal.Content image>
-      <Modal.Description>
-        <Header>Silahkan Isi Data Laundry Anda !</Header>
-        <Dropdown
-        text='jenis'
-          placeholder="Jenis Cuci"
-          fluid
-          selection
-          options={JenisCuci}
-        />
-        
-      </Modal.Description>
-    </Modal.Content>
-  </Modal>
-);
+  ];
+
+  return (
+    <div>
+      <Navbar />
+      <h1>Fresh and Clean Laundry - Kemang</h1>
+      <h3>Silahkan Isi Pemesanan Anda !</h3>
+      <Dropdown
+        placeholder="Jenis Layanan"
+        fluid
+        multiple
+        selection
+        options={options}
+      />
+      <h4>Jumlah</h4>
+      <MDBInput type="number" />
+
+      <h4>Harga</h4>
+      <MDBInput label="" hint="Rp. 10.000" disabled type="price" />
+      <MDBInput type="textarea" label="Catatan" outline />
+      <MDBBtn flat>BOOKING</MDBBtn>
+      <Footer/>
+    </div>
+  );
+}
 
 export default BookLaundry;
