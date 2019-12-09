@@ -27,7 +27,7 @@ ReactDOM.render(
       <Route path="/services">
         <Services />
       </Route>
-      <Route path="/instruction">
+      <Route path="/price">
         <Price />
       </Route>
       <Route path="/about">
