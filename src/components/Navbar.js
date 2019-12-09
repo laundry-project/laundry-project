@@ -63,6 +63,11 @@ class Navbar extends React.Component {
                   Login
                 </MDBBtn>
               </Link>
+              <Link to="/register">
+                <MDBBtn color="teal" right>
+                  Register
+                </MDBBtn>
+              </Link>
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
