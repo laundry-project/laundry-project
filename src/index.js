@@ -14,6 +14,7 @@ import Instruction from "./components/Instruction";
 import About from "./components/About";
 import Home from "./components/Home";
 import FindLaundry from './components/FindLaundry'
+import Register from "./components/Register"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -37,6 +38,9 @@ ReactDOM.render(
       </Route >
       <Route path ="/find-laundry">
       <FindLaundry/>
+      </Route>
+      <Route path="/register">
+        <Register/>
       </Route>
     </Switch>
   </BrowserRouter>,

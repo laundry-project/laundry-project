@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "semantic-ui-react";
+
 import {
   MDBNavbar,
   MDBNavbarNav,
@@ -63,14 +64,16 @@ class Navbar extends React.Component {
                   <strong>About Us</strong>
                 </MDBNavLink>
               </MDBNavItem>
-              <Link to='/login'>
-              <MDBBtn color="danger" right>
-                Login
-              </MDBBtn>
+              <Link to="/login">
+                <MDBBtn color="danger" right>
+                  Login
+                </MDBBtn>
               </Link>
-              <MDBBtn color="teal" right>
-                Register
-              </MDBBtn>
+              <Link to="/register">
+                <MDBBtn color="teal" right>
+                  Register
+                </MDBBtn>
+              </Link>
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
@@ -82,25 +85,3 @@ class Navbar extends React.Component {
 export default Navbar;
 
 
-// <Switch>
-// <Route exact path="/">
-//   <Container text style={{ marginTop: "7em" }}>
-//     <Home />
-//   </Container>
-// </Route>
-// <Route path="/services">
-//   <Container text style={{ marginTop: "7em" }}>
-//     <Services />
-//   </Container>
-// </Route>
-// <Route path="/instruction">
-//   <Container text style={{ marginTop: "7em" }}>
-//     <Instruction />
-//   </Container>
-// </Route>
-// <Route path="/about">
-//   <Container text style={{ marginTop: "7em" }}>
-//     <About />
-//   </Container>
-// </Route>
-// </Switch>
