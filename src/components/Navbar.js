@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container } from "semantic-ui-react";
 
 import {
   MDBNavbar,
@@ -12,11 +11,6 @@ import {
   MDBNavbarBrand,
   MDBBtn
 } from "mdbreact";
-
-import Services from "./Services";
-import Instruction from "./Instruction";
-import About from "./About";
-import Home from "./Home";
 
 class Navbar extends React.Component {
   state = {
@@ -69,11 +63,6 @@ class Navbar extends React.Component {
                   Login
                 </MDBBtn>
               </Link>
-              <Link to="/register">
-                <MDBBtn color="teal" right>
-                  Register
-                </MDBBtn>
-              </Link>
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
@@ -83,5 +72,3 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
-
-

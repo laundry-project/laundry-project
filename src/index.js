@@ -1,26 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import './index.css';
+
 import App from "./App";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
 import Login from "./components/Login";
 import Services from "./components/Services";
-import Instruction from "./components/Instruction";
+import Price from "./components/Price";
 import About from "./components/About";
-import Home from "./components/Home";
-import FindLaundry from './components/FindLaundry'
-import Register from "./components/Register"
+import FindLaundry from "./components/FindLaundry";
+import Register from "./components/Register";
 
 ReactDOM.render(
   <BrowserRouter>
-    {/* <App /> */}
-
-    <Switch>
+    <Route>
       <Route exact path="/">
         <App />
       </Route>
@@ -31,18 +28,18 @@ ReactDOM.render(
         <Services />
       </Route>
       <Route path="/instruction">
-        <Instruction />
+        <Price />
       </Route>
       <Route path="/about">
         <About />
-      </Route >
-      <Route path ="/FindLaundry">
-      <FindLaundry/>
+      </Route>
+      <Route path="/find-laundry">
+        <FindLaundry />
       </Route>
       <Route path="/register">
-        <Register/>
+        <Register />
       </Route>
-    </Switch>
+    </Route>
   </BrowserRouter>,
   document.getElementById("root")
 );

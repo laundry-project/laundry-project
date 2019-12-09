@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { Button, Card, Image, Modal } from "semantic-ui-react";
-import logo from "../assets/images/fresh.jpg";
+import logo from "../components/images/fresh.jpg";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "semantic-ui-css/semantic.min.css";
