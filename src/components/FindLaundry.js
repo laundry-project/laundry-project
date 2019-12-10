@@ -18,9 +18,7 @@ const FindLaundry = () => {
           Temukan Cabang Fresh and Clean Laundry Terdekat
         </h1>
         <p className="lead grey-text w-responsive text-center mx-auto mb-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
+          Temukan cabang laundry Fresh and Clean Laundry terdekat dari tempatmu. 
         </p>
 
         <MDBRow className="mx-auto">
