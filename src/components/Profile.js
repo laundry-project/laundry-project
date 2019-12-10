@@ -5,6 +5,6 @@ export default function Profile() {
     return (
         <div>
         <NavbarAfterlog/>
-                </div>
+        </div>
     )
 }
