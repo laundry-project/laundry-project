@@ -8,6 +8,7 @@ import "mdbreact/dist/css/mdb.css";
 import "semantic-ui-css/semantic.min.css";
 
 import App from "./App";
+import Profile from "./components/Profile"
 import Login from "./components/Login";
 import Services from "./components/Services";
 import Price from "./components/Price";
@@ -47,6 +48,9 @@ ReactDOM.render(
         </Route>
       <Route path="/ContactUs">
         <ContactUs />
+      </Route>
+      <Route path="/Profile">
+        <Profile />
       </Route>
     </Route>
   </BrowserRouter>,
