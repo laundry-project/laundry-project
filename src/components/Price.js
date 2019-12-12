@@ -23,7 +23,7 @@ const EcommercePage = () => {
           <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
             <MDBCard className="blue-gradient">
               <MDBCardBody className="white-text">
-                <h2 className="mb-4">Cuci Kering</h2>
+                <h2 className="mb-4">Dry Wash</h2>
                 <div className="d-flex justify-content-center">
                   <div className="card-circle d-flex justify-content-center align-items-center">
                     <MDBIcon icon="boxes" className="light-green-text" />
@@ -31,11 +31,11 @@ const EcommercePage = () => {
                 </div>
                 <h2 className="font-weight-bold my-4">Rp. 5000/kg</h2>
                 <h5>
-                  Layanan laundry pakaian yang hanya di lakukan proses pencucian
-                  dan pengeringan saja, tanpa dilakukan proses setrika. Hanya
-                  disusun rapi dalam plastik kresek.
+                  Laundry service that only does the washing process and drying
+                  alone, without the iron process. Only neatly arranged in
+                  plastic bag.
                 </h5>
-                <p>Maksimal : 2 hari</p>
+                <p>Maximum: 2 days</p>
                 <MDBBtn outline rounded color="white">
                   Find Location
                 </MDBBtn>
@@ -45,7 +45,7 @@ const EcommercePage = () => {
           <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
             <MDBCard className="blue-gradient">
               <MDBCardBody className="white-text">
-                <h2 className="mb-4">Cuci Kering + Setrika</h2>
+                <h2 className="mb-4">Dry Wash + Iron</h2>
                 <div className="d-flex justify-content-center">
                   <div className="card-circle d-flex justify-content-center align-items-center">
                     <MDBIcon icon="bullseye" className="light-green-text" />
@@ -53,11 +53,11 @@ const EcommercePage = () => {
                 </div>
                 <h2 className="font-weight-bold my-4">Rp. 8000/kg</h2>
                 <h5>
-                  Layanan laundry pakaian completed, di lakukan proses pencucian
-                  pengeringan dan setrika. Dipacking rapi dengan plastik bening
-                  dan disemprot dengan pewangi.
+                  Clothing laundry service completed, wash process drying and
+                  ironing. Neatly packaged with clear plastic and spray with
+                  deodorizer.
                 </h5>
-                <p>Maksimal : 3 hari</p>
+                <p>Maximum : 3 days</p>
                 <MDBBtn outline rounded color="white">
                   Find Location
                 </MDBBtn>
@@ -67,7 +67,7 @@ const EcommercePage = () => {
           <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
             <MDBCard className="blue-gradient">
               <MDBCardBody className="white-text">
-                <h2 className="mb-4">Setrika</h2>
+                <h2 className="mb-4">Iron</h2>
                 <div className="d-flex justify-content-center">
                   <div className="card-circle d-flex justify-content-center align-items-center">
                     <MDBIcon icon="bullseye" className="light-green-text" />
@@ -75,11 +75,11 @@ const EcommercePage = () => {
                 </div>
                 <h2 className="font-weight-bold my-4">Rp. 5000/kg</h2>
                 <h5>
-                  Layanan laundry yang hanya melakukan proses setrika pakaian
-                  tanpa melalui proses pencucian, lalu dipacking rapi dalam
-                  plastik bening dan disemprot dengan pewangi.
+                  Laundry service that only processes clothes iron without going
+                  through the washing process, then packed neatly inside clear
+                  plastic and sprayed with deodorizer.
                 </h5>
-                <p>Maksimal : 2 hari</p>
+                <p>Maximum : 2 days</p>
                 <MDBBtn outline rounded color="white">
                   Find Location
                 </MDBBtn>
@@ -92,17 +92,17 @@ const EcommercePage = () => {
           <MDBCol lg="12" md="12" className="mb-lg-0 mb-4">
             <MDBCard className="blue-gradient">
               <MDBCardBody className="white-text">
-                <h2 className="mb-4">Laundry Satuan</h2>
+                <h2 className="mb-4">Laundry Unit</h2>
                 <div className="d-flex justify-content-center">
                   <div className="card-circle d-flex justify-content-center align-items-center">
                     <MDBIcon icon="dice-d20" className="light-green-text" />
                   </div>
                 </div>
                 <h4>
-                  Kami juga melayani laundry satuan seperti Bed Cover, Selimut,
-                  Gaun, Jas, Sepatu, Tas, Karpet dan lainya.
+                We also serve laundry units such as Bed Covers, Blankets,
+                  Dresses, suits, shoes, bags, carpets and more.
                 </h4>
-                <p>Maksimal : 1 minggu</p>
+                <p>Maximum : 1 week</p>
                 <MDBBtn outline rounded color="white">
                   Find Location
                 </MDBBtn>

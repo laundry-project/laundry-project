@@ -14,14 +14,26 @@ export default class BookLaundry extends Component {
   state = {
     modal: false,
     options: [
-      { key: "Cuci Kering", text: "Cuci kering", value: "Cuci Kering" },
-      { key: "Setrika", text: "Setrika", value: "Setrika" },
+      { 
+        key: "Cuci Kering", 
+        text: "Dry wash", 
+        value: "Cuci Kering" 
+      },
+      { 
+        key: "Setrika", 
+        text: "Iron", 
+        value: "Setrika" 
+      },
       {
         key: "Cuci Kering + Setrika",
-        text: "Cuci Kering + Setrika",
+        text: "Dry Wash + Iron",
         value: "Cuci Kering + Setrika"
       },
-      { key: "Cuci Satuan", text: "Cuci Satuan", value: "Cuci Satuan" }
+      { 
+        key: "Cuci Satuan", 
+        text: "Laundry Unit", 
+        value: "Cuci Satuan" 
+      }
     ]
   };
 
@@ -35,12 +47,11 @@ export default class BookLaundry extends Component {
     return (
       <div>
         <MDBContainer>
-          <MDBBtn onClick={this.toggle}>Booking</MDBBtn>
+          <MDBBtn onClick={this.toggle}>Order</MDBBtn>
           <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
             <MDBModalHeader toggle={this.toggle}>
-              Silahkan Isi Pemesanan Anda
+            Please fill in your order
             </MDBModalHeader>
-
             <MDBModalBody>
               <input type="date" name="" id="Tanggal" />
               <Dropdown
@@ -50,15 +61,15 @@ export default class BookLaundry extends Component {
                 selection
                 options={this.state.options}
               />
-              <h4>Jumlah</h4>
+              <h4>Amount</h4>
               <MDBInput type="number" label="Kilogram" />
 
-              <h4>Harga</h4>
+              <h4>Price</h4>
               <MDBInput label="" hint="Rp. 10.000" disabled type="price" />
               <MDBInput type="textarea" label="Catatan" outline />
             </MDBModalBody>
             <MDBModalFooter>
-              <MDBBtn color="primary">Booking Sekarang</MDBBtn>
+              <MDBBtn color="primary">Booking Now</MDBBtn>
             </MDBModalFooter>
           </MDBModal>
         </MDBContainer>

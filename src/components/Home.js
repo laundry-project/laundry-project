@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import About from "./About";
+import LogoLaundry from '../components/images/logo.png';
 // import { Icon } from "semantic-ui-react";
 
 const Home = () => {
@@ -15,7 +16,7 @@ const Home = () => {
         <MDBRow>
           <MDBCol>
             <MDBCardImage
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_mELUH0EqYeiry3LpUWN9lxVh3Lr6YbeAXkf59JvJavxcnyRbCQ&s"
+              src={LogoLaundry}
               className="img w-100"
             />
             <MDBBtn color="white">

@@ -23,12 +23,12 @@ const Services = () => {
               </a>
             </MDBView>
             <MDBCardBody className="pb-0">
-              <h4 className="font-weight-bold my-3">Order Langsung Ditempat</h4>
+              <h4 className="font-weight-bold my-3">Direct Order In Place</h4>
               <p className="grey-text">
-                Customer bisa datang langsung ke cabang laundry yang diinginkan.
-                Pilih jenis layanan laundry kiloan atau satuan. Customer akan di
-                berikan nota sebagai bukti untuk pengambilan laundry sesuai
-                waktu dan layanan laundry yang dipilih.
+                Customers can come directly to the desired laundry branch.
+                Select the type of laundry service kilos or units. The customer
+                will be at provide memorandum as evidence for appropriate
+                laundry collection selected time and laundry service.
               </p>
             </MDBCardBody>
           </MDBCol>
@@ -44,15 +44,13 @@ const Services = () => {
               </a>
             </MDBView>
             <MDBCardBody className="pb-0">
-              <h4 className="font-weight-bold my-3">
-                Cuci, Kering dan Setrika{" "}
-              </h4>
+              <h4 className="font-weight-bold my-3">Dry Wash and Iron </h4>
               <p className="grey-text">
-                Pakaian customer yang telah di timbang siap buat di laundry.
-                Pegawai akan segera melakukan pencucian dan pengeringan langsung
-                ditempat. Menggunakan teknologi dan bahan yang ramah lingkungan.
-                Setelah selesai, pakaian akan langsung disetrika dan dipacking
-                rapi.
+                Customer clothes that have been weighed are ready to be made in
+                the laundry. Employees will immediately do the washing and
+                drying immediately in place. Using environmentally friendly
+                technology and materials. When finished, the clothes will be
+                immediately ironed and packaged neat.
               </p>
             </MDBCardBody>
           </MDBCol>
@@ -68,11 +66,11 @@ const Services = () => {
               </a>
             </MDBView>
             <MDBCardBody className="pb-0">
-              <h4 className="font-weight-bold my-3">Ambil Laundry</h4>
+              <h4 className="font-weight-bold my-3">Take Laundry</h4>
               <p className="grey-text">
-                Pelayanan laundry dilakukan dengan serius sesuai jenis layanan
-                yang diinginkan customer. Setelah rapi dipacking, pakaian siap
-                diserahkan ke customer dengan membawa nota pembayaran.
+                Laundry service is carried out seriously according to the type
+                of service what the customer wants. After neatly packaged, the
+                clothes are ready submitted to the customer with a payment note.
               </p>
             </MDBCardBody>
           </MDBCol>

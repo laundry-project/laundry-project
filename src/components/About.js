@@ -9,31 +9,31 @@ const About = () => {
           Company Profile
         </h1>
         <p className="lead grey-text w-responsive mx-auto mb-5">
-        Merupakan unit usaha yang dikelola oleh kinerja handal dan berpengalaman dalam memberikan pelayanan yang bergerak di bidang laundry atau binatu, termasuk juga konsep cuci dan seterika per kilogram. Memiliki layanan unggulan yaitu pencucian dan perawatan pakaian satuan premium dengan standarisasi fabric care dan sudah menggunakan teknologi ionisasi untuk wet cleaning. Selain itu Fresh and Clean Laundry juga memiliki lini usaha perawatan sepatu dan tas branded, serta cuci sofa/spring bed dengan didukung peralatan canggih dan modern.
+        Is a business unit that is managed by reliable and experienced performance in providing services engaged in laundry or laundry, including the concept of washing and ironing per kilogram. Has superior services, namely washing and maintaining premium unit clothing with standard fabric care and already using ionization technology for wet cleaning. In addition, Fresh and Clean Laundry also has a business line of shoe care and branded bags, as well as washing sofas / spring beds supported by sophisticated and modern equipment.
       </p>
         <h2 className="h1-responsive font-weight-bold my-5">
-          Mengapa Harus Fresh and Clean Laundry?
+        Why Fresh and Clean Laundry?
         </h2>
         <MDBRow>
           <MDBCol md="4">
             <MDBIcon icon="medal" size="3x" className="blue-text" />
-            <h5 className="font-weight-bold my-4">Profesional dan Terpercaya</h5>
+            <h5 className="font-weight-bold my-4">Professional and Trusted</h5>
             <p className="grey-text mb-md-0 mb-5">
-            Terbukti telah memberikan pelayanan jasa laundry lebih dari 10.000 pelanggan dengan didukung keagenan yang tersebar dibeberapa titik strategis, mempermudah bagi konsumen untuk mendapatkan pelayanan Fresh and Clean Laundry
+            Proven to provide laundry services for more than 10,000 customers with agency support spread across strategic points, making it easier for consumers to get Fresh and Clean Laundry services.
             </p>
           </MDBCol>
           <MDBCol md="4">
             <MDBIcon icon="mail-bulk" size="3x" className="blue-text" />
-            <h5 className="font-weight-bold my-4">System Kasir Online & Realtime</h5>
+            <h5 className="font-weight-bold my-4">Online & Realtime Cashier System</h5>
             <p className="grey-text mb-md-0 mb-5">
-            Fresh and Clean laundry mengikuti perkembangan jaman dan teknologi, terutama untuk sytem kasir yang menggunakan aplikasi berbasis android dan bisa kirim nota via platform Whatsapp (WA).
+            Fresh and Clean laundry follows the development of the era and technology, especially for cashier systems that use Android-based applications and can send notes via the Whatsapp (WA) platform.
             </p>
           </MDBCol>
           <MDBCol md="4">
             <MDBIcon icon= "spray-can" size="3x" className="blue-text" />
-            <h5 className="font-weight-bold my-4">Menggunakan Deterjen Ramah Lingkungan</h5>
+            <h5 className="font-weight-bold my-4">Using Environmentally Friendly Detergents</h5>
             <p className="grey-text mb-md-0 mb-5">
-            Disertai sertifikat dari Sucofindo, diketahui bahwa limbah deterjen kami dapat menyuburkan tanaman dan menetralisir zat kimia aktif pada lingkungan.
+            Accompanied by a certificate from Sucofindo, it is known that our detergent waste can fertilize plants and neutralize active chemicals in the environment.
             </p>
           </MDBCol>
           </MDBRow>
@@ -42,23 +42,23 @@ const About = () => {
           <MDBRow>
           <MDBCol md="4">
             <MDBIcon icon="users" size="3x" className="blue-text" />
-            <h5 className="font-weight-bold my-4">1 Mesin untuk 1 Pelanggan</h5>
+            <h5 className="font-weight-bold my-4">1 Machine for 1 Customer</h5>
             <p className="grey-text mb-md-0 mb-5">
-            Untuk menjaga higienitas pakaian, dengan jumlah berat tertentu maka proses pencucian pakaian tidak dicampur dengan pelanggan lain.
+            To maintain the hygiene of clothes, with a certain amount of weight, the process of washing clothes is not mixed with other customers.
             </p>
           </MDBCol>
           <MDBCol md="4">
             <MDBIcon icon="tshirt" size="3x" className="blue-text" />
-            <h5 className="font-weight-bold my-4">Mencuci Sesuai Washing Care Label</h5>
+            <h5 className="font-weight-bold my-4">Wash according to the Washing Care Label</h5>
             <p className="grey-text mb-md-0 mb-5">
-            Sesuai Moto kami yaitu laundry kiloan profesional, bahwa meskipun cuci kiloan kami tetap mengutamakan pelayanan dimana proses pencucian disesuaikan logo washing care label pada pakaian. Sehingga pakaian Anda menjadi lebih awet dan terjaga.
+            In accordance with our motto that is professional kilo laundry, that although washing kilos we still prioritize services where the washing process is tailored to the washing care label logo on clothing. So that your clothes become more durable and awake.
             </p>
           </MDBCol>
           <MDBCol md="4">
             <MDBIcon icon= "stopwatch" size="3x" className="blue-text" />
-            <h5 className="font-weight-bold my-4">GARANSI KECEPATAN: Pelayanan Super Express “4 JAM JADI”</h5>
+            <h5 className="font-weight-bold my-4">SPEED WARRANTY: "4 HOURS" Super Express Service</h5>
             <p className="grey-text mb-md-0 mb-5">
-            Kepadatan beraktivitas sering kali melupakan untuk mencuci pakaian yang hendak dipakai, dengan adanya layanan cuci kilat ini diharapkan dapat membantu pelanggan mengatasi masalahnya.
+            Density of activity often forgets to wash the clothes to be worn, with the fast washing service is expected to help customers solve the problem.
             </p>
           </MDBCol>
         </MDBRow>

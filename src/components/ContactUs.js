@@ -11,11 +11,6 @@ const ContactPage = () => {
       <h2 className="h1-responsive font-weight-bold text-center my-5">
         Contact us
       </h2>
-      <p className="text-center w-responsive mx-auto pb-5">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-        error amet numquam iure provident voluptate esse quasi, veritatis
-        totam voluptas nostrum quisquam eum porro a pariatur veniam.
-      </p>
       <MDBRow>
           
         <MDBCol lg="5" className="lg-0 mb-4">
