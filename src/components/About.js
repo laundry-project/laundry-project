@@ -1,12 +1,9 @@
 import React from "react";
 import {  MDBRow, MDBCol, MDBIcon } from "mdbreact";
-import Navbar from './Navbar'
-import Footer from './Footer'
 
 const About = () => {
   return (
     <div>
-        <Navbar/>
       <section className="text-center my-5">
         <h1 className="h1-responsive font-weight-bold my-5">
           Company Profile
@@ -66,7 +63,6 @@ const About = () => {
           </MDBCol>
         </MDBRow>
       </section>
-      <Footer/>
     </div>
   );
 }

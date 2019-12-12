@@ -1,8 +1,8 @@
 {
-  "name": "Laundry-Project",
+  "name": "laundry-project",
+  "description": "Laundry Komodo | Laundry Today Or Naked Tomorrow",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://robyafrizal.github.io/",
   "dependencies": {
     "axios": "^0.19.0",
     "jsonwebtoken": "^8.5.1",
@@ -21,9 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

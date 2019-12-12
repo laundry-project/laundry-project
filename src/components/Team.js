@@ -26,7 +26,7 @@ const TeamPage = () => {
                 alt="Sample avatar"
               />
               <h5 className="font-weight-bold mt-4 mb-3">Muhammad Iqbal</h5>
-              <p className="text-uppercase blue-text">Full Stack Developer</p>
+              <p className="text-uppercase blue-text">Leader Team | Full Stack Developer</p>
               {/* <p className="grey-text">
                 Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
                 consectetur, adipisci sed quia non numquam modi tempora eius.
