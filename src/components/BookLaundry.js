@@ -11,6 +11,17 @@ import {
 } from "mdbreact";
 
 export default class BookLaundry extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      date: "",
+      option: "",
+      amount: "",
+      price: ""
+    }
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
   state = {
     modal: false,
     options: [
@@ -24,11 +35,17 @@ export default class BookLaundry extends Component {
       { key: "Cuci Satuan", text: "Cuci Satuan", value: "Cuci Satuan" }
     ]
   };
-
   toggle = () => {
     this.setState({
       modal: !this.state.modal
     });
+  };
+  onChange(event) {
+    this.state({ [event.this.option]: event.target.value });
+  }
+  onSubmit(event) {
+    event.preventDefault();
+    console.log('haol')
   };
 
   render() {
@@ -42,23 +59,43 @@ export default class BookLaundry extends Component {
             </MDBModalHeader>
 
             <MDBModalBody>
-              <input type="date" name="" id="Tanggal" />
+              <input
+                type="date"
+                name=""
+                onChange={this.onChange}
+                value={this.state.date}
+                id="Tanggal"
+              />
               <Dropdown
                 placeholder="Jenis Layanan"
                 fluid
                 multiple
                 selection
                 options={this.state.options}
+                onChange={this.handleChange}
+                value={this.state.option}
               />
               <h4>Jumlah</h4>
-              <MDBInput type="number" label="Kilogram" />
+              <MDBInput
+                type="number"
+                label="Kilogram"
+                onChange={this.onChange}
+                value={this.state.amount}
+              />
 
               <h4>Harga</h4>
-              <MDBInput label="" hint="Rp. 10.000" disabled type="price" />
+              <MDBInput
+                label=""
+                hint="Rp. 10.000"
+                disabled
+                type="price"
+                onChange={this.onChange}
+                value={this.state.price}
+              />
               <MDBInput type="textarea" label="Catatan" outline />
             </MDBModalBody>
             <MDBModalFooter>
-              <MDBBtn color="primary">Booking Sekarang</MDBBtn>
+              <MDBBtn color="primary" onClick={this.onSubmit}>Booking Sekarang</MDBBtn>
             </MDBModalFooter>
           </MDBModal>
         </MDBContainer>
