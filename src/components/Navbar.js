@@ -59,11 +59,6 @@ class Navbar extends React.Component {
                 </MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/about" className="black-text">
-                  <strong>About Us</strong>
-                </MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
                 <MDBNavLink to="/Profile" className="black-text">
                   <strong>Profile</strong>
                 </MDBNavLink>

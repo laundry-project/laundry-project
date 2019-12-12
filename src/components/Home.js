@@ -2,9 +2,8 @@ import React from "react";
 import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardImage } from "mdbreact";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Team from "./Team";
-import Icon from "./Icon";
 import { Link } from "react-router-dom";
+import About from "./About";
 // import { Icon } from "semantic-ui-react";
 
 const Home = () => {
@@ -25,8 +24,7 @@ const Home = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-    <Team/>
-    <Icon/>
+    <About/>
   <Footer />
     </div>
   );
