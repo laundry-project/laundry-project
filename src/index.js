@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import AuthButton from "./components/AuthButton";
+import PrivateRoute from "./components/PrivateRoute";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -24,33 +26,34 @@ ReactDOM.render(
     <Switch>
       <Route exact path="/">
         <App />
+        <AuthButton />
       </Route>
       <Route exact path="/login">
         <Login />
       </Route>
-      <Route path="/services">
+      <PrivateRoute path="/services">
         <Services />
-      </Route>
-      <Route path="/price">
+      </PrivateRoute>
+      <PrivateRoute path="/price">
         <Price />
-      </Route>
-      <Route path="/about">
+      </PrivateRoute>
+      <PrivateRoute path="/about">
         <About />
-      </Route>
-      <Route path="/FindLaundry">
+      </PrivateRoute>
+      <PrivateRoute path="/FindLaundry">
         <FindLaundry />
-      </Route>
+      </PrivateRoute>
+      <PrivateRoute path="/BookLaundry">
+        <BookLaundry />
+      </PrivateRoute>
+      <PrivateRoute path="/ContactUs">
+        <ContactUs />
+      </PrivateRoute>
+      <PrivateRoute path="/Profile">
+        <Profile />
+      </PrivateRoute>
       <Route path="/register">
         <Register />
-      </Route>
-      <Route path="/BookLaundry">
-        <BookLaundry />
-      </Route>
-      <Route path="/ContactUs">
-        <ContactUs />
-      </Route>
-      <Route path="/Profile">
-        <Profile />
       </Route>
     </Switch>
   </BrowserRouter>,

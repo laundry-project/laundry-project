@@ -1,11 +1,20 @@
 import React from "react";
-import { MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardImage } from "mdbreact";
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCardImage,
+  MDBTooltip
+} from "mdbreact";
+import { Link } from "react-router-dom";
+
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
 import About from "./About";
 import LogoLaundry from '../components/images/logo.png';
 // import { Icon } from "semantic-ui-react";
+import { clientAuth } from "./clientAuth";
 
 const Home = () => {
   return (
@@ -19,14 +28,23 @@ const Home = () => {
               src={LogoLaundry}
               className="img w-100"
             />
-            <MDBBtn color="white">
-              <Link to="/FindLaundry">Find Laundry</Link>
-            </MDBBtn>
+            {clientAuth.isAuthenticated ? (
+              <Link to="/FindLaundry">
+                <MDBBtn color="white">Find Laundry</MDBBtn>
+              </Link>
+            ) : (
+              <MDBContainer>
+                <MDBTooltip domElement tag="span">
+                  <MDBBtn color="white">Find Laundry</MDBBtn>
+                  <span> you have to login first </span>
+                </MDBTooltip>
+              </MDBContainer>
+            )}
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-    <About/>
-  <Footer />
+      <About />
+      <Footer />
     </div>
   );
 };
