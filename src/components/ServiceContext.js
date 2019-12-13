@@ -6,25 +6,25 @@ export function ServiceProvider(props) {
     {
       key: "Cuci Kering",
       value: "Cuci Kering",
-      text: "Cuci Kering",
+      text: "Dry Wash",
       price: 5000
     },
     {
       key: "Cuci Kering & Setrika",
       value: "Cuci Kering & Setrika",
-      text: "Cuci Kering & Setrika",
+      text: "Dry Wash & Iron",
       price: 8000
     },
     {
       key: "Setrika",
       value: "Setrika",
-      text: "Setrika",
+      text: "Iron",
       price: 5000
     },
     {
       key: "Cuci Kiloan",
       value: "Cuci Kiloan",
-      text: "Cuci Kiloan",
+      text: "Wash Unit",
       price: 8000
     }
   ]);
