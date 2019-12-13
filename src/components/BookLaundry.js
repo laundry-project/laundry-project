@@ -12,6 +12,7 @@ import {
 
 import { ServiceContext } from "./ServiceContext";
 import { ServiceProvider } from "./ServiceContext";
+import { create } from "jss";
 
 class BookLaundry extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class BookLaundry extends Component {
     this.state = {
       date: "",
       service: [],
-      amount: "",
+      amount: 0,
       price: [],
       note: ""
     };
@@ -40,6 +41,8 @@ class BookLaundry extends Component {
 
   onServiceHandle = (event, data) => {
     event.persist();
+    console.log(event);
+
     const optionIndex = data.options.findIndex(
       el => el.value.toLowerCase() === data.value.toLowerCase()
     );
@@ -50,15 +53,30 @@ class BookLaundry extends Component {
     });
   };
 
+  btnAdd = () => {
+    this.setState({
+      amount: this.state.amount + 1
+    });
+  };
+  reduceBtn = () => {
+    this.setState({
+      amount: this.state.amount - 1
+    });
+  };
+
+  //   handlefield = () => {
+  //  const
+  //   }
+
   onSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
     console.log(this.state);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.service.length !== this.state.service.length) {
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.service.length !== this.state.service.length) {
+  //   }
+  // }
 
   render() {
     return (
@@ -84,17 +102,22 @@ class BookLaundry extends Component {
                         options={value}
                         name="service"
                         onChange={this.onServiceHandle}
-                        onAddItem={this.handleClose}
                       />
 
-                      <h4>Jumlah</h4>
-                      <MDBInput
-                        type="number"
-                        label="kilogram"
-                        name="amount"
-                        onChange={this.onChange}
-                        value={this.state.amount}
-                      />
+                      <div>
+                        <MDBInput
+                          type="number"
+                          disabled
+                          min={0}
+                          max={5}
+                          label="Jumlah"
+                          name="amount"
+                          onChange={this.onChange}
+                          value={this.state.amount}
+                        />
+                        <button onClick={this.btnAdd}>+</button>
+                        <button onClick={this.reduceBtn}>-</button>
+                      </div>
 
                       <h4>Harga</h4>
                       <MDBInput
