@@ -54,19 +54,23 @@ class BookLaundry extends Component {
   };
 
   btnAdd = () => {
-    this.setState({
-      amount: this.state.amount + 1
-    });
+    if (this.state.amount < 5) {
+      this.setState({
+        amount: this.state.amount + 1
+      });
+    } else {
+      alert("ups, Maksimal Pesanan 5");
+    }
   };
   reduceBtn = () => {
-    this.setState({
-      amount: this.state.amount - 1
-    });
+    if (this.state.amount > 0) {
+      this.setState({
+        amount: this.state.amount - 1
+      });
+    } else {
+      alert("Tidak Bisa dibawah Nol");
+    }
   };
-
-  //   handlefield = () => {
-  //  const
-  //   }
 
   onSubmit(event) {
     // event.preventDefault();
@@ -119,7 +123,6 @@ class BookLaundry extends Component {
                         <button onClick={this.reduceBtn}>-</button>
                       </div>
 
-                      <h4>Harga</h4>
                       <MDBInput
                         label="Harga Service"
                         disabled
