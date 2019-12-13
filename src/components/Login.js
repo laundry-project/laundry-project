@@ -10,12 +10,9 @@ import {
   MDBInput,
   MDBBtn,
   MDBIcon,
-<<<<<<< HEAD
   MDBView,
-  MDBMask
-=======
+  MDBMask,
   MDBAlert
->>>>>>> b507d625f9422c89fcb950c6ae08b52c39cef8bb
 } from "mdbreact";
 
 import LogoLaundry from "../components/images/logo.png";
