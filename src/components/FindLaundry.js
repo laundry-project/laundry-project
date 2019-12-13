@@ -5,9 +5,10 @@ import logoGrogol from "../components/images/grogol.jpg";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "semantic-ui-css/semantic.min.css";
-import { MDBRow, MDBCol} from "mdbreact";
+import { MDBRow, MDBCol } from "mdbreact";
 import BookLaundry from "./BookLaundry";
 
+import { ServiceProvider } from "./ServiceContext";
 
 const FindLaundry = () => {
   return (
@@ -18,7 +19,7 @@ const FindLaundry = () => {
           Temukan Cabang Fresh and Clean Laundry Terdekat
         </h1>
         <p className="lead grey-text w-responsive text-center mx-auto mb-5">
-          Temukan cabang laundry Fresh and Clean Laundry terdekat dari tempatmu. 
+          Temukan cabang laundry Fresh and Clean Laundry terdekat dari tempatmu.
         </p>
 
         <MDBRow className="mx-auto">
@@ -42,8 +43,9 @@ const FindLaundry = () => {
                   <br />
                   Telepon : (021) 22716458
                 </p>
-
-                <BookLaundry/>
+                <ServiceProvider>
+                  <BookLaundry />
+                </ServiceProvider>
               </MDBCol>
             </MDBRow>
           </MDBCol>
@@ -68,7 +70,7 @@ const FindLaundry = () => {
                   <br />
                   Telepon : (021) 29465000
                 </p>
-                <BookLaundry/>
+                <BookLaundry />
               </MDBCol>
             </MDBRow>
           </MDBCol>
@@ -93,7 +95,7 @@ const FindLaundry = () => {
                   <br />
                   Telepon : (021) 56989999
                 </p>
-                <BookLaundry/>
+                <BookLaundry />
               </MDBCol>
             </MDBRow>
           </MDBCol>

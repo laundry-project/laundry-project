@@ -64,12 +64,12 @@ class Navbar extends React.Component {
                 </MDBNavLink>
               </MDBNavItem>
               <Link to="/login">
-                <MDBBtn color="pink" right>
+                <MDBBtn color="pink" >
                   Login
                 </MDBBtn>
               </Link>
               <Link to="/register">
-                <MDBBtn color="green" right>
+                <MDBBtn color="green" >
                   Register
                 </MDBBtn>
               </Link>
