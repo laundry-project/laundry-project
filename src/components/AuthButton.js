@@ -2,12 +2,14 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { clientAuth } from "./clientAuth";
 
+import { MDBAlert } from "mdbreact";
+
 function AuthButton() {
   let history = useHistory();
 
   return clientAuth.isAuthenticated ? (
-    <p>
-      Welcome to Laundry Page!{" "}
+    <MDBAlert color="primary">
+      Welcome to Laundry Page!
       <button
         onClick={() => {
           clientAuth.signout(() => history.push("/"));
@@ -15,9 +17,11 @@ function AuthButton() {
       >
         Sign out
       </button>
-    </p>
+    </MDBAlert>
   ) : (
-    <p>You are not logged in.</p>
+    <MDBAlert color="danger">
+      <h3>You are not logged in.</h3>
+    </MDBAlert>
   );
 }
 

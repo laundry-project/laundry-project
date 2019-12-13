@@ -9,7 +9,8 @@ import {
   MDBCardBody,
   MDBInput,
   MDBBtn,
-  MDBIcon
+  MDBIcon,
+  MDBAlert
 } from "mdbreact";
 
 import Navbar from "./Navbar";
@@ -65,7 +66,15 @@ function Login() {
   return (
     <div>
       <Navbar />
-      {error === "NULL INPUT" ? <p>Tidak Boleh Kosong</p> : <></>}
+      {error === "NULL INPUT" ? (
+        <MDBAlert color="primary">
+          <center>
+            <h1>Body can not empty</h1>
+          </center>
+        </MDBAlert>
+      ) : (
+        <></>
+      )}
       <MDBContainer className="mt-5 mr-2 text-center">
         <MDBRow>
           <MDBCol md="6">
