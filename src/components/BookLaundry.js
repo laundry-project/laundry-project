@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import { Dropdown } from "semantic-ui-react";
-import { MDBInput, MDBBtn } from "mdbreact";
+import { MDBInput, MDBBtn} from "mdbreact";
 import {
   MDBContainer,
   MDBModal,
@@ -12,7 +12,6 @@ import {
 
 import { ServiceContext } from "./ServiceContext";
 import { ServiceProvider } from "./ServiceContext";
-// import { create } from "jss";
 
 class BookLaundry extends Component {
   constructor(props) {
@@ -26,8 +25,6 @@ class BookLaundry extends Component {
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-
-    // const dropdown = React.useContext(ServiceContext);
   }
 
   toggle = () => {
@@ -36,7 +33,11 @@ class BookLaundry extends Component {
     });
   };
   onChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({
+      [event.target.name]: event.target.value,
+      newPrice: this.state.price + 1,
+      prevPrice: this.setState.price
+    });
   }
 
   onServiceHandle = (event, data) => {
@@ -54,12 +55,16 @@ class BookLaundry extends Component {
   };
 
   btnAdd = () => {
-    if (this.state.amount < 5) {
-      this.setState({
-        amount: this.state.amount + 1
-      });
+    if (this.state.service.length === 0) {
+      alert("isi servis dulu");
     } else {
-      alert("ups, Maksimal Pesanan 5");
+      if (this.state.amount < 10) {
+        this.setState({
+          amount: this.state.amount + 1
+        });
+      } else {
+        alert("ups, Maksimal Pesanan 10");
+      }
     }
   };
   reduceBtn = () => {
@@ -73,14 +78,14 @@ class BookLaundry extends Component {
   };
 
   onSubmit(event) {
-    // event.preventDefault();
-    console.log(this.state);
+    if (this.state.service.length === 0) {
+      alert("Pesanan Tidak Boleh Kosong");
+    } else {
+      // event.preventDefault();
+      console.log(this.state);
+      alert("Selamat Pesanan ada sudah dipesan");
+    }
   }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.service.length !== this.state.service.length) {
-  //   }
-  // }
 
   render() {
     return (
@@ -101,7 +106,6 @@ class BookLaundry extends Component {
                       <Dropdown
                         placeholder="Jenis Layanan"
                         fluid
-                        // multiple
                         selection
                         options={value}
                         name="service"
@@ -112,8 +116,6 @@ class BookLaundry extends Component {
                         <MDBInput
                           type="number"
                           disabled
-                          min={0}
-                          max={5}
                           label="Jumlah"
                           name="amount"
                           onChange={this.onChange}
