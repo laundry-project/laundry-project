@@ -10,70 +10,143 @@ import {
   MDBModalFooter
 } from "mdbreact";
 
-export default class BookLaundry extends Component {
-  state = {
-    modal: false,
-    options: [
-      { 
-        key: "Cuci Kering", 
-        text: "Dry wash", 
-        value: "Cuci Kering" 
-      },
-      { 
-        key: "Setrika", 
-        text: "Iron", 
-        value: "Setrika" 
-      },
-      {
-        key: "Cuci Kering + Setrika",
-        text: "Dry Wash + Iron",
-        value: "Cuci Kering + Setrika"
-      },
-      { 
-        key: "Cuci Satuan", 
-        text: "Laundry Unit", 
-        value: "Cuci Satuan" 
-      }
-    ]
-  };
+import { ServiceContext } from "./ServiceContext";
+import { ServiceProvider } from "./ServiceContext";
+// import { create } from "jss";
+
+class BookLaundry extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      date: "",
+      service: [],
+      amount: 0,
+      price: [],
+      note: ""
+    };
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+
+    // const dropdown = React.useContext(ServiceContext);
+  }
 
   toggle = () => {
     this.setState({
       modal: !this.state.modal
     });
   };
+  onChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  onServiceHandle = (event, data) => {
+    event.persist();
+    console.log(event);
+
+    const optionIndex = data.options.findIndex(
+      el => el.value.toLowerCase() === data.value.toLowerCase()
+    );
+
+    this.setState({
+      service: data.value,
+      price: data.options[optionIndex].price
+    });
+  };
+
+  btnAdd = () => {
+    this.setState({
+      amount: this.state.amount + 1
+    });
+  };
+  reduceBtn = () => {
+    this.setState({
+      amount: this.state.amount - 1
+    });
+  };
+
+  //   handlefield = () => {
+  //  const
+  //   }
+
+  onSubmit(event) {
+    // event.preventDefault();
+    console.log(this.state);
+  }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevState.service.length !== this.state.service.length) {
+  //   }
+  // }
 
   render() {
     return (
       <div>
-        <MDBContainer>
-          <MDBBtn onClick={this.toggle}>Order</MDBBtn>
-          <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-            <MDBModalHeader toggle={this.toggle}>
-            Please fill in your order
-            </MDBModalHeader>
-            <MDBModalBody>
-              <input type="date" name="" id="Tanggal" />
-              <Dropdown
-                placeholder="Jenis Layanan"
-                fluid
-                multiple
-                selection
-                options={this.state.options}
-              />
-              <h4>Amount</h4>
-              <MDBInput type="number" label="Kilogram" />
+        <ServiceProvider>
+          <ServiceContext.Consumer>
+            {value => {
+              return (
+                <MDBContainer>
+                  <MDBBtn onClick={this.toggle}>Booking</MDBBtn>
+                  <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
+                    <MDBModalHeader toggle={this.toggle}>
+                      Silahkan Isi Pemesanan Anda
+                    </MDBModalHeader>
 
-              <h4>Price</h4>
-              <MDBInput label="" hint="Rp. 10.000" disabled type="price" />
-              <MDBInput type="textarea" label="Catatan" outline />
-            </MDBModalBody>
-            <MDBModalFooter>
-              <MDBBtn color="primary">Booking Now</MDBBtn>
-            </MDBModalFooter>
-          </MDBModal>
-        </MDBContainer>
+                    <MDBModalBody>
+                      <input type="date" name="date" onChange={this.onChange} />
+                      <Dropdown
+                        placeholder="Jenis Layanan"
+                        fluid
+                        // multiple
+                        selection
+                        options={value}
+                        name="service"
+                        onChange={this.onServiceHandle}
+                      />
+
+                      <div>
+                        <MDBInput
+                          type="number"
+                          disabled
+                          min={0}
+                          max={5}
+                          label="Jumlah"
+                          name="amount"
+                          onChange={this.onChange}
+                          value={this.state.amount}
+                        />
+                        <button onClick={this.btnAdd}>+</button>
+                        <button onClick={this.reduceBtn}>-</button>
+                      </div>
+
+                      <h4>Harga</h4>
+                      <MDBInput
+                        label="Harga Service"
+                        disabled
+                        value={this.state.price}
+                      />
+                      <MDBInput
+                        type="textarea"
+                        label="Catatan"
+                        outline
+                        name="note"
+                        onChange={this.onChange}
+                      />
+                    </MDBModalBody>
+                    <MDBModalFooter>
+                      <MDBBtn color="primary" onClick={this.onSubmit}>
+                        Booking Sekarang
+                      </MDBBtn>
+                    </MDBModalFooter>
+                  </MDBModal>
+                </MDBContainer>
+              );
+            }}
+          </ServiceContext.Consumer>
+        </ServiceProvider>
       </div>
     );
   }
 }
+
+export default BookLaundry;
