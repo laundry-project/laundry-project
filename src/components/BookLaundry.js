@@ -95,16 +95,16 @@ class BookLaundry extends Component {
             {value => {
               return (
                 <MDBContainer>
-                  <MDBBtn onClick={this.toggle}>Booking</MDBBtn>
+                  <MDBBtn onClick={this.toggle}>Order</MDBBtn>
                   <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                     <MDBModalHeader toggle={this.toggle}>
-                      Silahkan Isi Pemesanan Anda
+                    Please fill in your order
                     </MDBModalHeader>
 
                     <MDBModalBody>
                       <input type="date" name="date" onChange={this.onChange} />
                       <Dropdown
-                        placeholder="Jenis Layanan"
+                        placeholder="Service type"
                         fluid
                         selection
                         options={value}
@@ -116,7 +116,9 @@ class BookLaundry extends Component {
                         <MDBInput
                           type="number"
                           disabled
-                          label="Jumlah"
+                          min={0}
+                          max={5}
+                          label="amount"
                           name="amount"
                           onChange={this.onChange}
                           value={this.state.amount}
@@ -126,13 +128,13 @@ class BookLaundry extends Component {
                       </div>
 
                       <MDBInput
-                        label="Harga Service"
+                        label="Service price"
                         disabled
                         value={this.state.price}
                       />
                       <MDBInput
                         type="textarea"
-                        label="Catatan"
+                        label="Note"
                         outline
                         name="note"
                         onChange={this.onChange}
@@ -140,7 +142,7 @@ class BookLaundry extends Component {
                     </MDBModalBody>
                     <MDBModalFooter>
                       <MDBBtn color="primary" onClick={this.onSubmit}>
-                        Booking Sekarang
+                        Booking Now
                       </MDBBtn>
                     </MDBModalFooter>
                   </MDBModal>
