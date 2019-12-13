@@ -12,7 +12,6 @@ import {
 
 import { ServiceContext } from "./ServiceContext";
 import { ServiceProvider } from "./ServiceContext";
-// import { create } from "jss";
 
 class BookLaundry extends Component {
   constructor(props) {
@@ -21,13 +20,12 @@ class BookLaundry extends Component {
       date: "",
       service: [],
       amount: 0,
-      price: [],
+      price: 0,
+      servicePrice: 0,
       note: ""
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-
-    // const dropdown = React.useContext(ServiceContext);
   }
 
   toggle = () => {
@@ -36,7 +34,9 @@ class BookLaundry extends Component {
     });
   };
   onChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   }
 
   onServiceHandle = (event, data) => {
@@ -49,23 +49,35 @@ class BookLaundry extends Component {
 
     this.setState({
       service: data.value,
-      price: data.options[optionIndex].price
+      price: data.options[optionIndex].price,
+      servicePrice: data.options[optionIndex].price
     });
   };
 
-  btnAdd = () => {
-    if (this.state.amount < 5) {
-      this.setState({
-        amount: this.state.amount + 1
-      });
+  btnAdd = async () => {
+    if (this.state.service.length === 0) {
+      alert("isi servis dulu");
     } else {
-      alert("ups, Maksimal Pesanan 5");
+      if (this.state.amount < 10) {
+        await this.setState({
+          amount: this.state.amount + 1
+        });
+        this.setState({
+          price: this.state.amount * this.state.servicePrice
+        });
+      } else {
+        alert("ups, Maksimal Pesanan 10");
+      }
     }
   };
-  reduceBtn = () => {
+
+  reduceBtn = async () => {
     if (this.state.amount > 0) {
-      this.setState({
+      await this.setState({
         amount: this.state.amount - 1
+      });
+      this.setState({
+        price: this.state.amount * this.state.servicePrice
       });
     } else {
       alert("Tidak Bisa dibawah Nol");
@@ -73,14 +85,14 @@ class BookLaundry extends Component {
   };
 
   onSubmit(event) {
-    // event.preventDefault();
-    console.log(this.state);
+    if (this.state.service.length === 0) {
+      alert("Pesanan Tidak Boleh Kosong");
+    } else {
+      event.preventDefault();
+      console.log(this.state);
+      alert('Selamat Pesanan Selesai');
+    }
   }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.service.length !== this.state.service.length) {
-  //   }
-  // }
 
   render() {
     return (
@@ -90,18 +102,17 @@ class BookLaundry extends Component {
             {value => {
               return (
                 <MDBContainer>
-                  <MDBBtn onClick={this.toggle}>Booking</MDBBtn>
+                  <MDBBtn onClick={this.toggle}>Order</MDBBtn>
                   <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                     <MDBModalHeader toggle={this.toggle}>
-                      Silahkan Isi Pemesanan Anda
+                      Please fill in your order
                     </MDBModalHeader>
 
                     <MDBModalBody>
                       <input type="date" name="date" onChange={this.onChange} />
                       <Dropdown
-                        placeholder="Jenis Layanan"
+                        placeholder="Service type"
                         fluid
-                        // multiple
                         selection
                         options={value}
                         name="service"
@@ -114,7 +125,7 @@ class BookLaundry extends Component {
                           disabled
                           min={0}
                           max={5}
-                          label="Jumlah"
+                          label="amount"
                           name="amount"
                           onChange={this.onChange}
                           value={this.state.amount}
@@ -124,13 +135,13 @@ class BookLaundry extends Component {
                       </div>
 
                       <MDBInput
-                        label="Harga Service"
+                        label="Price"
                         disabled
                         value={this.state.price}
                       />
                       <MDBInput
                         type="textarea"
-                        label="Catatan"
+                        label="Note"
                         outline
                         name="note"
                         onChange={this.onChange}
@@ -138,7 +149,7 @@ class BookLaundry extends Component {
                     </MDBModalBody>
                     <MDBModalFooter>
                       <MDBBtn color="primary" onClick={this.onSubmit}>
-                        Booking Sekarang
+                        Booking Now
                       </MDBBtn>
                     </MDBModalFooter>
                   </MDBModal>
