@@ -47,7 +47,7 @@ function Login() {
     e.preventDefault();
     console.log(newUser);
     if (newUser.email === "" && newUser.password === "") {
-      console.log("ga boleh kosong");
+      console.log("Can not Empty");
       setError("NULL INPUT");
       console.log(error);
     } else {

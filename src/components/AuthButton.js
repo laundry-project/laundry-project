@@ -7,7 +7,7 @@ function AuthButton() {
 
   return clientAuth.isAuthenticated ? (
     <p>
-      Welcome to My Page!{" "}
+      Welcome to Laundry Page!{" "}
       <button
         onClick={() => {
           clientAuth.signout(() => history.push("/"));
