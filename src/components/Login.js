@@ -10,8 +10,12 @@ import {
   MDBInput,
   MDBBtn,
   MDBIcon,
+<<<<<<< HEAD
   MDBView,
   MDBMask
+=======
+  MDBAlert
+>>>>>>> b507d625f9422c89fcb950c6ae08b52c39cef8bb
 } from "mdbreact";
 
 import LogoLaundry from "../components/images/logo.png";
@@ -68,8 +72,16 @@ function Login() {
   return (
     <div>
       <Navbar />
-      {error === "NULL INPUT" ? <p>Tidak Boleh Kosong</p> : <></>}
-      <MDBContainer className="mt-5 mr-2 mx-auto">
+      {error === "NULL INPUT" ? (
+        <MDBAlert color="primary">
+          <center>
+            <h1>Body can not empty</h1>
+          </center>
+        </MDBAlert>
+      ) : (
+        <></>
+      )}
+      <MDBContainer className="mt-5 mr-2 text-center">
         <MDBRow>
           <MDBCol md="6">
             <MDBCard>

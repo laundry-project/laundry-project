@@ -35,7 +35,7 @@ class Register extends React.Component {
       ...otherState
     } = this.state;
     axios
-      .post(URI + "/users", otherState)
+      .post(URI + "/users/register", otherState)
       .then(result => {
         // this.setState.isMounted = true;
         if (result.status === 200) {

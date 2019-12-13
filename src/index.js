@@ -25,8 +25,8 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route exact path="/">
-        <App />
         <AuthButton />
+        <App />
       </Route>
       <Route exact path="/login">
         <Login />
