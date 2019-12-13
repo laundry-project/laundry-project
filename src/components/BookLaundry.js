@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import { Dropdown } from "semantic-ui-react";
-import { MDBInput, MDBBtn} from "mdbreact";
+import { MDBInput, MDBBtn } from "mdbreact";
 import {
   MDBContainer,
   MDBModal,
@@ -20,7 +20,8 @@ class BookLaundry extends Component {
       date: "",
       service: [],
       amount: 0,
-      price: [],
+      price: 0,
+      servicePrice: 0,
       note: ""
     };
     this.onChange = this.onChange.bind(this);
@@ -34,9 +35,7 @@ class BookLaundry extends Component {
   };
   onChange(event) {
     this.setState({
-      [event.target.name]: event.target.value,
-      newPrice: this.state.price + 1,
-      prevPrice: this.setState.price
+      [event.target.name]: event.target.value
     });
   }
 
@@ -50,27 +49,35 @@ class BookLaundry extends Component {
 
     this.setState({
       service: data.value,
-      price: data.options[optionIndex].price
+      price: data.options[optionIndex].price,
+      servicePrice: data.options[optionIndex].price
     });
   };
 
-  btnAdd = () => {
+  btnAdd = async () => {
     if (this.state.service.length === 0) {
       alert("isi servis dulu");
     } else {
       if (this.state.amount < 10) {
-        this.setState({
+        await this.setState({
           amount: this.state.amount + 1
+        });
+        this.setState({
+          price: this.state.amount * this.state.servicePrice
         });
       } else {
         alert("ups, Maksimal Pesanan 10");
       }
     }
   };
-  reduceBtn = () => {
+
+  reduceBtn = async () => {
     if (this.state.amount > 0) {
-      this.setState({
+      await this.setState({
         amount: this.state.amount - 1
+      });
+      this.setState({
+        price: this.state.amount * this.state.servicePrice
       });
     } else {
       alert("Tidak Bisa dibawah Nol");
@@ -81,9 +88,9 @@ class BookLaundry extends Component {
     if (this.state.service.length === 0) {
       alert("Pesanan Tidak Boleh Kosong");
     } else {
-      // event.preventDefault();
+      event.preventDefault();
       console.log(this.state);
-      alert("Selamat Pesanan ada sudah dipesan");
+      alert('Selamat Pesanan Selesai');
     }
   }
 
@@ -98,7 +105,7 @@ class BookLaundry extends Component {
                   <MDBBtn onClick={this.toggle}>Order</MDBBtn>
                   <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                     <MDBModalHeader toggle={this.toggle}>
-                    Please fill in your order
+                      Please fill in your order
                     </MDBModalHeader>
 
                     <MDBModalBody>
@@ -128,7 +135,7 @@ class BookLaundry extends Component {
                       </div>
 
                       <MDBInput
-                        label="Service price"
+                        label="Price"
                         disabled
                         value={this.state.price}
                       />
