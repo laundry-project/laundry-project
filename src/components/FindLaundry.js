@@ -31,13 +31,12 @@ const FindLaundry = () => {
                   Fresh and Clean Laundry Kemang
                 </h2>
                 <p className="grey-text">
-                  Address : Jl. Kemang Barat No.8, RT.9/RW.1, Bangka, Kec. Mampang
-                  Prapatan, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta
-                  12730
+                  Address : Jl. Kemang Barat No.8, RT.9/RW.1, Bangka, Kec.
+                  Mampang Prapatan, Kota Jakarta Selatan, Daerah Khusus Ibukota
+                  Jakarta 12730
                   <br />
                   Telepon : (021) 22716458
                 </p>
-
                 <BookLaundry />
               </MDBCol>
             </MDBRow>
