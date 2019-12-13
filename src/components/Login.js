@@ -11,7 +11,6 @@ import {
   MDBBtn,
   MDBIcon,
   MDBView,
-  MDBMask,
   MDBAlert
 } from "mdbreact";
 
@@ -78,7 +77,7 @@ function Login() {
       ) : (
         <></>
       )}
-      <MDBContainer className="mt-5 mr-2 text-center">
+      <MDBContainer className="mt-5 mr-2 mx-auto">
         <MDBRow>
           <MDBCol md="6">
             <MDBCard>
@@ -153,16 +152,13 @@ function Login() {
             </MDBCard>
           </MDBCol>
           <MDBCol lg="6">
-            <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
+            <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" waves>
               <img
                 style={{width:"100%", height:"428px"}}
                 className="img-fluid"
                 src={LogoLaundry}
                 alt=""
               />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
             </MDBView>
           </MDBCol>
         </MDBRow>
