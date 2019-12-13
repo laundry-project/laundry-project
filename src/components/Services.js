@@ -1,5 +1,6 @@
 import React from "react";
 import { MDBRow, MDBCol, MDBCardBody, MDBView, MDBMask } from "mdbreact";
+import Price from "./Price";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
@@ -76,6 +77,7 @@ const Services = () => {
           </MDBCol>
         </MDBRow>
       </section>
+      <Price/>
       <Footer />
     </div>
   );

@@ -8,6 +8,8 @@ import "semantic-ui-css/semantic.min.css";
 import { MDBRow, MDBCol } from "mdbreact";
 import BookLaundry from "./BookLaundry";
 
+import { ServiceProvider } from "./ServiceContext";
+
 const FindLaundry = () => {
   return (
     <div>
@@ -16,6 +18,10 @@ const FindLaundry = () => {
         <h1 className="h1-responsive font-weight-bold text-center my-5">
           Find the Nearest Fresh and Clean Laundry Branch
         </h1>
+        <p className="lead grey-text w-responsive text-center mx-auto mb-5">
+          Temukan cabang laundry Fresh and Clean Laundry terdekat dari tempatmu.
+        </p>
+
         <MDBRow className="mx-auto">
           <MDBCol md="4" className="md-0 mb-5 text-center ">
             <MDBRow>
@@ -31,14 +37,15 @@ const FindLaundry = () => {
                   Fresh and Clean Laundry Kemang
                 </h2>
                 <p className="grey-text">
-                  Address : Jl. Kemang Barat No.8, RT.9/RW.1, Bangka, Kec. Mampang
-                  Prapatan, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta
-                  12730
+                  Address : Jl. Kemang Barat No.8, RT.9/RW.1, Bangka, Kec.
+                  Mampang Prapatan, Kota Jakarta Selatan, Daerah Khusus Ibukota
+                  Jakarta 12730
                   <br />
                   Telepon : (021) 22716458
                 </p>
-
-                <BookLaundry />
+                <ServiceProvider>
+                  <BookLaundry />
+                </ServiceProvider>
               </MDBCol>
             </MDBRow>
           </MDBCol>

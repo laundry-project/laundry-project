@@ -7,13 +7,14 @@ import {
   MDBIcon,
   MDBBtn
 } from "mdbreact";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import { Link } from "react-router-dom";
+// import Navbar from "./Navbar";
+// import Footer from "./Footer";
 
 const EcommercePage = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <section className="text-center my-5">
         <h1 className="h1-responsive font-weight-bold text-center my-5">
           Our Price
@@ -33,12 +34,14 @@ const EcommercePage = () => {
                 <h5>
                   Laundry service that only does the washing process and drying
                   alone, without the iron process. Only neatly arranged in
-                  plastic bag.
+                  plastic bag and spray with deodorizer.
                 </h5>
                 <p>Maximum: 2 days</p>
-                <MDBBtn outline rounded color="white">
-                  Find Location
-                </MDBBtn>
+                <Link to="/FindLaundry">
+                  <MDBBtn outline rounded color="white">
+                    Find Laundry Location
+                  </MDBBtn>
+                </Link>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -58,9 +61,11 @@ const EcommercePage = () => {
                   deodorizer.
                 </h5>
                 <p>Maximum : 3 days</p>
-                <MDBBtn outline rounded color="white">
-                  Find Location
-                </MDBBtn>
+                <Link to="/FindLaundry">
+                  <MDBBtn outline rounded color="white">
+                    Find Laundry Location
+                  </MDBBtn>
+                </Link>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -80,9 +85,11 @@ const EcommercePage = () => {
                   plastic and sprayed with deodorizer.
                 </h5>
                 <p>Maximum : 2 days</p>
-                <MDBBtn outline rounded color="white">
-                  Find Location
-                </MDBBtn>
+                <Link to="/FindLaundry">
+                  <MDBBtn outline rounded color="white">
+                    Find Laundry Location
+                  </MDBBtn>
+                </Link>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -99,19 +106,21 @@ const EcommercePage = () => {
                   </div>
                 </div>
                 <h4>
-                We also serve laundry units such as Bed Covers, Blankets,
+                  We also serve laundry units such as Bed Covers, Blankets,
                   Dresses, suits, shoes, bags, carpets and more.
                 </h4>
                 <p>Maximum : 1 week</p>
+                <Link to="/FindLaundry">
                 <MDBBtn outline rounded color="white">
-                  Find Location
+                  Find Laundry Location
                 </MDBBtn>
+              </Link>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
         </MDBRow>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -58,11 +58,11 @@ function Navbar() {
                 <strong>Services</strong>
               </MDBNavLink>
             </MDBNavItem>
-            <MDBNavItem>
+            {/* <MDBNavItem>
               <MDBNavLink to="/price" className="black-text">
                 <strong>Price</strong>
               </MDBNavLink>
-            </MDBNavItem>
+            </MDBNavItem> */}
             <MDBNavItem>
               <MDBNavLink to="/ContactUs" className="black-text">
                 <strong>Contact Us</strong>
@@ -93,5 +93,6 @@ function Navbar() {
     </div>
   );
 }
+
 
 export default Navbar;
