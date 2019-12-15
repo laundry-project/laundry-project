@@ -68,11 +68,6 @@ class Navbar extends React.Component {
                   <strong>Profile</strong>
                 </MDBNavLink>
               </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="/ProfileUser" className="black-text">
-                  <strong>Profile Users</strong>
-                </MDBNavLink>
-              </MDBNavItem>
               <Link to="/register">
                 <MDBBtn color="green" right>
                   Log Out
