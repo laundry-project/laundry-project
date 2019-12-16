@@ -73,7 +73,6 @@ class Navbar extends React.Component {
                   Log Out
                 </MDBBtn>
               </Link>
-          
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
