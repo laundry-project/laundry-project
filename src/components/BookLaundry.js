@@ -1,5 +1,7 @@
 import React from "react";
 import { Component } from "react";
+import { withRouter } from "react-router-dom";
+
 import { Dropdown } from "semantic-ui-react";
 import { MDBInput, MDBBtn } from "mdbreact";
 import {
@@ -13,15 +15,19 @@ import {
 import { ServiceContext } from "./ServiceContext";
 import { ServiceProvider } from "./ServiceContext";
 
+import axios from "axios";
+
+const URI = process.env.REACT_APP_API_URI;
+
 class BookLaundry extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: "",
+      servicePrice: 0,
       service: [],
+      date: "",
       amount: 0,
       price: 0,
-      servicePrice: 0,
       note: ""
     };
     this.onChange = this.onChange.bind(this);
@@ -90,7 +96,26 @@ class BookLaundry extends Component {
     } else {
       event.preventDefault();
       console.log(this.state);
-      alert('Selamat Pesanan Selesai');
+      console.log(this.props);
+      const { servicePrice, ...restData } = this.state;
+      axios
+        .post(URI + "/orders", restData)
+        .then(result => {
+          if (result.status === 200) {
+            // this.props.history.push("/FindLaundry");
+            alert("Selamat Pesanan Selesai");
+            this.setState({
+              servicePrice: 0,
+              service: [],
+              date: "",
+              amount: 0,
+              price: 0,
+              note: ""
+            });
+            this.toggle();
+          }
+        })
+        .catch(error => console.log(error));
     }
   }
 
@@ -163,4 +188,4 @@ class BookLaundry extends Component {
   }
 }
 
-export default BookLaundry;
+export default withRouter(BookLaundry);
