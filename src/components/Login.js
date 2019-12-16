@@ -10,11 +10,9 @@ import {
   MDBInput,
   MDBBtn,
   MDBIcon,
-  MDBView,
   MDBAlert
 } from "mdbreact";
 
-import LogoLaundry from "../components/images/logo.png";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import axios from "axios";
@@ -77,91 +75,72 @@ function Login() {
       ) : (
         <></>
       )}
-      <MDBContainer className="mt-5 mr-2 mx-auto">
-        <MDBRow>
-          <MDBCol md="6">
-            <MDBCard>
-              <div className="header pt-3 blue">
-                <MDBRow className="d-flex justify-content-center">
-                  <h3 className="white-text mb-3 pt-3 font-weight-bold">
+      <MDBContainer className="mt-5 display-flex justify-content-center align-items-center w-50">
+        <MDBCard>
+          <div className="header pt-3 blue">
+            <MDBRow className="d-flex justify-content-center">
+              <h3 className="white-text mb-3 pt-3 font-weight-bold">Log in</h3>
+            </MDBRow>
+            <MDBRow className="mt-2 mb-3 d-flex justify-content-center">
+              <a href="https://www.instagram.com/dianpus86/" className="fa-lg p-2 m-2 fb-ic">
+                <MDBIcon
+                  fab
+                  icon="instagram"
+                  size="lg"
+                  className="white-text"
+                />
+              </a>
+              <a href="https://twitter.com/dianpus86" className="fa-lg p-2 m-2 tw-ic">
+                <MDBIcon fab className="fa-twitter white-text fa-lg" />
+              </a>
+              <a href="https://www.facebook.com/dianpus86" className="fa-lg p-2 m-2 gplus-ic">
+                <MDBIcon fab className="fa-facebook g white-text fa-lg" />
+              </a>
+            </MDBRow>
+          </div>
+          <MDBCardBody className="mx-4 mt-4">
+            <MDBInput
+              label="Your email"
+              group
+              type="text"
+              validate
+              name="email"
+              value={newUser.email}
+              onChange={onChange}
+            />
+            <MDBInput
+              label="Your password"
+              group
+              type="password"
+              validate
+              name="password"
+              containerClass="mb-0"
+              value={newUser.password}
+              onChange={onChange}
+            />
+            <MDBRow className="d-flex align-items-center mb-4 mt-5">
+              <MDBCol md="5" className="d-flex align-items-start">
+                <div className="text-center">
+                  <MDBBtn
+                    color="grey"
+                    rounded
+                    type="button"
+                    className="z-depth-1a"
+                    onClick={onLogin}
+                  >
                     Log in
-                  </h3>
-                </MDBRow>
-                <MDBRow className="mt-2 mb-3 d-flex justify-content-center">
-                  <a href="#!" className="fa-lg p-2 m-2 fb-ic">
-                    <MDBIcon
-                      fab
-                      icon="facebook-f"
-                      size="lg"
-                      className="white-text"
-                    />
-                  </a>
-                  <a href="#!" className="fa-lg p-2 m-2 tw-ic">
-                    <MDBIcon fab className="fa-twitter white-text fa-lg" />
-                  </a>
-                  <a href="#!" className="fa-lg p-2 m-2 gplus-ic">
-                    <MDBIcon
-                      fab
-                      className="fa-google-plus-g white-text fa-lg"
-                    />
-                  </a>
-                </MDBRow>
-              </div>
-              <MDBCardBody className="mx-4 mt-4">
-                <MDBInput
-                  label="Your email"
-                  group
-                  type="text"
-                  validate
-                  name="email"
-                  value={newUser.email}
-                  onChange={onChange}
-                />
-                <MDBInput
-                  label="Your password"
-                  group
-                  type="password"
-                  validate
-                  name="password"
-                  containerClass="mb-0"
-                  value={newUser.password}
-                  onChange={onChange}
-                />
-                <MDBRow className="d-flex align-items-center mb-4 mt-5">
-                  <MDBCol md="5" className="d-flex align-items-start">
-                    <div className="text-center">
-                      <MDBBtn
-                        color="grey"
-                        rounded
-                        type="button"
-                        className="z-depth-1a"
-                        onClick={onLogin}
-                      >
-                        Log in
-                      </MDBBtn>
-                    </div>
-                  </MDBCol>
-                  <MDBCol md="7" className="d-flex justify-content-end">
-                    <p className="font-small grey-text mt-3">
-                      Don't have an account?
-                      <Link to="/register">Sign Up</Link>
-                    </p>
-                  </MDBCol>
-                </MDBRow>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol lg="6">
-            <MDBView className="rounded z-depth-2 mb-lg-0 mb-4" waves>
-              <img
-                style={{width:"100%", height:"428px"}}
-                className="img-fluid"
-                src={LogoLaundry}
-                alt=""
-              />
-            </MDBView>
-          </MDBCol>
-        </MDBRow>
+                  </MDBBtn>
+                </div>
+              </MDBCol>
+              <MDBCol md="7" className="d-flex justify-content-end">
+                <p className="font-small grey-text mt-3">
+                  Don't have an account?
+                  <Link to="/register">Sign Up</Link>
+                </p>
+              </MDBCol>
+            </MDBRow>
+          </MDBCardBody>
+        </MDBCard>
       </MDBContainer>
       <Footer />
     </div>

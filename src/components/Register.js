@@ -61,7 +61,7 @@ class Register extends React.Component {
     return (
       <div>
         <Navbar />
-        <MDBContainer>
+        <MDBContainer className="mt-5 display-flex justify-content-center align-items-right ">
           <MDBRow>
             <MDBCol md="6">
               <form>

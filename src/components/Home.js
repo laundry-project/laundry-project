@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import About from "./About";
-import LogoLaundry from "../components/images/logo.png";
+import LogoLaundry from "../components/images/logolaundry.jpg";
 // import { Icon } from "semantic-ui-react";
 import { clientAuth } from "./clientAuth";
 
