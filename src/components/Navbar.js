@@ -60,7 +60,7 @@ function Navbar() {
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to="/ContactUs" className="black-text">
-                <strong>Contact Us</strong>
+                <strong>Testimonials</strong>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>

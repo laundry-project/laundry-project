@@ -1,116 +1,260 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput } from "mdbreact";
-import Navbar from "./Navbar"
-import Footer from './Footer'
+import {
+  MDBCarousel,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBIcon
+} from "mdbreact";
+
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+// import LogoAsia from '../components/images/asia.jpeg';
 
 const ContactPage = () => {
   return (
-      <div>
-          <Navbar/>
-    <section className="my-5">
-      <h2 className="h1-responsive font-weight-bold text-center my-5">
-        Contact us
-      </h2>
-      <MDBRow>
-          
-        <MDBCol lg="5" className="lg-0 mb-4">
-          <MDBCard>
-            <MDBCardBody>
-              <div className="form-header blue accent-1">
-                <h3 className="mt-2">
-                  <MDBIcon icon="envelope" /> Write to us:
-                </h3>
-              </div>
-              <p className="dark-grey-text">
-                We'll write rarely, but only the best content.
-              </p>
-              <div className="md-form">
-                <MDBInput
-                  icon="user"
-                  label="Your name"
-                  iconClass="grey-text"
-                  type="text"
-                  id="form-name"
-                />
-              </div>
-              <div className="md-form">
-                <MDBInput
-                  icon="envelope"
-                  label="Your email"
-                  iconClass="grey-text"
-                  type="text"
-                  id="form-email"
-                />
-              </div>
-              <div className="md-form">
-                <MDBInput
-                  icon="tag"
-                  label="Subject"
-                  iconClass="grey-text"
-                  type="text"
-                  id="form-subject"
-                />
-              </div>
-              <div className="md-form">
-                <MDBInput
-                  icon="pencil-alt"
-                  label="Icon Prefix"
-                  iconClass="grey-text"
-                  type="textarea"
-                  id="form-text"
-                />
-              </div>
-              <div className="text-center">
-                <MDBBtn color="light-blue">Submit</MDBBtn>
-              </div>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-        <MDBCol lg="7">
-          <div
-            id="map-container"
-            className="rounded z-depth-1-half map-container"
-            style={{ height: "400px" }}
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d76765.98321148289!2d-73.96694563267306!3d40.751663750099084!2m3!!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1525939514494"
-              title="This is a unique title"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              style={{ border: 0 }}
-            />
-          </div>
-          <br />
-          <MDBRow className="text-center">
-            <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
-                <MDBIcon icon="map-marker-alt" />
-              </MDBBtn>
-              <p>Jakarta, 30257</p>
-              <p className="mb-md-0">Indonesia</p>
-            </MDBCol>
-            <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
-                <MDBIcon icon="phone" />
-              </MDBBtn>
-              <p>+81320022260</p>
-              <p className="mb-md-0">Mon - Sun, 8:00-22:00</p>
-            </MDBCol>
-            <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
-                <MDBIcon icon="envelope" />
-              </MDBBtn>
-              <p>freshlaundry@gmail.com</p>
-              <p className="mb-md-0">laundrycare@gmail.com</p>
-            </MDBCol>
-          </MDBRow>
-        </MDBCol>
-      </MDBRow>
-      <Footer/>
-    </section>
+    <div>
+         <Navbar />
+    <MDBContainer>
+      <section className="text-center my-5">
+        <h1 className="h1-responsive font-weight-bold my-5">
+          Testimonials
+        </h1>
+        <MDBCarousel
+          activeItem={1}
+          length={3}
+          slide={true}
+          showControls={true}
+          multiItem
+          testimonial
+        >
+        <br/>
+        <br/>
+          <MDBCarouselInner>
+            <MDBCarouselItem itemId="1">
+              <MDBRow>
+                <MDBCol md="4" className="clearfix d-none d-md-block">
+                  <img style={{width : '350px', height:'350px'}}
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg"
+                    alt=""
+                    className="rounded-circle img-fluid mx-auto"
+                  />
+                  <h4 className="font-weight-bold mt-4">Anna Deynah</h4>
+                  <h6 className="blue-text font-weight-bold my-3">
+                    Anak Kost Bu Ijah
+                  </h6>
+                  <p className="font-weight-normal">
+                    <MDBIcon icon="quote-left" className="pr-2" />
+                    Laundrynya cepat, wangi dan rapi.
+                  </p>
+                  <div className="yellow-text">
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon far icon="star-half" />
+                  </div>
+                </MDBCol>
+                <MDBCol md="4" className="clearfix d-none d-md-block">
+                  <img style={{width : '350px', height:'350px'}}
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg"
+                    alt=""
+                    className="rounded-circle img-fluid mx-auto"
+                  />
+                  <h4 className="font-weight-bold mt-4">John Doe</h4>
+                  <h6 className="blue-text font-weight-bold my-3">
+                    Anak rantau 
+                  </h6>
+                  <p className="font-weight-normal">
+                    <MDBIcon icon="quote-left" className="pr-2" />
+                    2 hari kelar harga manusiawi gokil sobbb
+                  </p>
+                  <div className="yellow-text">
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                  </div>
+                </MDBCol>
+                <MDBCol md="4" className="clearfix d-none d-md-block">
+                  <img style={{width : '350px', height:'350px'}}
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
+                    alt=""
+                    className="rounded-circle img-fluid mx-auto"
+                  />
+                  <h4 className="font-weight-bold mt-4">Abbey Clark</h4>
+                  <h6 className="blue-text font-weight-bold my-3">
+                    Langganan lama
+                  </h6>
+                  <p className="font-weight-normal">
+                    <MDBIcon icon="quote-left" className="pr-2" />
+                    Udah lama langganan di sini dan selalu puas dengan layanannya.
+                  </p>
+                  <div className="yellow-text">
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon far icon="star" />
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="2">
+              <MDBRow>
+                <MDBCol md="4" className="clearfix d-none d-md-block">
+                  <img style={{width : '350px', height:'350px'}}
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg"
+                    alt=""
+                    className="rounded-circle img-fluid"
+                  />
+                  <h4 className="font-weight-bold mt-4">Blake Dabney</h4>
+                  <h6 className="blue-text font-weight-bold my-3">
+                    Web Designer
+                  </h6>
+                  <p className="font-weight-normal">
+                    <MDBIcon icon="quote-left" className="pr-2" />
+                    Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                    corporis laboriosam.
+                  </p>
+                  <div className="yellow-text">
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon far icon="star-half" />
+                  </div>
+                </MDBCol>
+                <MDBCol md="4" className="clearfix d-none d-md-block">
+                  <img style={{width : '350px', height:'350px'}}
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(6).jpg"
+                    alt=""
+                    className="rounded-circle img-fluid"
+                  />
+                  <h4 className="font-weight-bold mt-4">Andrea Clay</h4>
+                  <h6 className="blue-text font-weight-bold my-3">
+                    Front-end developer
+                  </h6>
+                  <p className="font-weight-normal">
+                    <MDBIcon icon="quote-left" className="pr-2" />
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Quod eos id officiis hic tenetur quae.
+                  </p>
+                  <div className="yellow-text">
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                  </div>
+                </MDBCol>
+                <MDBCol md="4" className="clearfix d-none d-md-block">
+                  <img style={{width : '350px', height:'350px'}}
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(7).jpg"
+                    alt=""
+                    className="rounded-circle img-fluid"
+                  />
+                  <h4 className="font-weight-bold mt-4">Cami Gosse</h4>
+                  <h6 className="blue-text font-weight-bold my-3">
+                    Phtographer
+                  </h6>
+                  <p className="font-weight-normal">
+                    <MDBIcon icon="quote-left" className="pr-2" />
+                    At vero eos et accusamus et iusto odio dignissimos ducimus
+                    qui blanditiis praesentium.
+                  </p>
+                  <div className="yellow-text">
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon far icon="star" />
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </MDBCarouselItem>
+            <MDBCarouselItem itemId="3">
+              <MDBRow>
+                <MDBCol md="4">
+                  <img style={{width : '350px', height:'350px'}}
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg"
+                    alt=""
+                    className="rounded-circle img-fluid"
+                  />
+                  <h4 className="font-weight-bold mt-4">Bobby Haley</h4>
+                  <h6 className="blue-text font-weight-bold my-3">
+                    Web Developer
+                  </h6>
+                  <p className="font-weight-normal">
+                    <MDBIcon icon="quote-left" className="pr-2" />
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Quod eos id officiis hic tenetur quae.
+                  </p>
+                  <div className="yellow-text">
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                  </div>
+                </MDBCol>
+                <MDBCol md="4" className="clearfix d-none d-md-block">
+                  <img style={{width : '350px', height:'350px'}}
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
+                    alt=""
+                    className="rounded-circle img-fluid"
+                  />
+                  <h4 className="font-weight-bold mt-4">Elisa Janson</h4>
+                  <h6 className="blue-text font-weight-bold my-3">Marketer</h6>
+                  <p className="font-weight-normal">
+                    <MDBIcon icon="quote-left" className="pr-2" />
+                    At vero eos et accusamus et iusto odio dignissimos ducimus
+                    qui blanditiis praesentium.
+                  </p>
+                  <div className="yellow-text">
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon far icon="star-half" />
+                  </div>
+                </MDBCol>
+                <MDBCol md="4" className="clearfix d-none d-md-block">
+                  <img style={{width : '350px', height:'350px'}}
+                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg"
+                    alt=""
+                    className="rounded-circle img-fluid"
+                  />
+                  <h4 className="font-weight-bold mt-4">Rob Jacobs</h4>
+                  <h6 className="blue-text font-weight-bold my-3">
+                    Front-end developer
+                  </h6>
+                  <p className="font-weight-normal">
+                    <MDBIcon icon="quote-left" className="pr-2" />
+                    Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                    corporis laboriosam.
+                  </p>
+                  <div className="yellow-text">
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon icon="star" />
+                    <MDBIcon far icon="star" />
+                  </div>
+                </MDBCol>
+              </MDBRow>
+            </MDBCarouselItem>
+          </MDBCarouselInner>
+        </MDBCarousel>
+      </section>
+      <Footer />
+    </MDBContainer>
     </div>
   );
-}
+};
 
 export default ContactPage;
