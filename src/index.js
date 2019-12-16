@@ -20,6 +20,7 @@ import Register from "./components/Register";
 import BookLaundry from "./components/BookLaundry";
 import * as serviceWorker from "./serviceWorker";
 import ContactUs from "./components/ContactUs";
+import History from './components/History';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -48,6 +49,9 @@ ReactDOM.render(
       </PrivateRoute>
       <PrivateRoute path="/ContactUs">
         <ContactUs />
+      </PrivateRoute>
+      <PrivateRoute path="/History">
+        <History/>
       </PrivateRoute>
       <PrivateRoute path="/Profile">
         <Profile />

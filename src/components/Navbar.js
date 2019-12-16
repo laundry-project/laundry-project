@@ -58,14 +58,14 @@ function Navbar() {
                 <strong>Services</strong>
               </MDBNavLink>
             </MDBNavItem>
-            {/* <MDBNavItem>
-              <MDBNavLink to="/price" className="black-text">
-                <strong>Price</strong>
-              </MDBNavLink>
-            </MDBNavItem> */}
             <MDBNavItem>
               <MDBNavLink to="/ContactUs" className="black-text">
                 <strong>Contact Us</strong>
+              </MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/History" className="black-text">
+                <strong>History</strong>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
