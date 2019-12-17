@@ -25,24 +25,12 @@ function ProfileUser() {
     collapseID: ""
   });
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { show: false, collapseID: "" };
-  // }
-
-  // componentDidMount() {
-  //   // this.props.getUserAction(this.props.history);
-  // }
-
   const toggleCollapse = collapseID => () => {
     setToggle(prevState => ({
       collapseID: prevState.collapseID !== collapseID ? collapseID : ""
     }));
   };
 
-  // render() {
-  //   console.log(this.state);
-  //   console.log(this.props);
   console.log(userContext);
   return (
     <MDBRow className="mx-auto w-50 mt-5">
@@ -98,20 +86,22 @@ function ProfileUser() {
 
 export default ProfileUser;
 
-// {Array.isArray(this.props.userData.order) &&
-//   this.props.userData.order.map((object, i) => {
-//     console.log(object);
-//     let date = new Date(object.date);
-//     let fullDate = `${date.getDate()}-${date.getMonth() +
-//       1}-${date.getFullYear()}`;
-//     let time = `${date.getHours()}:${date.getMinutes()}`;
-//     return [
-//       <tr key={i}>
-//         <th scope="col">{i + 1}</th>
-//         {/* <td>{object.laundry.name}</td> */}
-//         <td>{time}</td>
-//         <td>{fullDate}</td>
-//         <td>{object.service}</td>
-//       </tr>
-//     ];
-//   })}
+// {
+//   Array.isArray(this.props.userData.order) &&
+//     this.props.userData.order.map((object, i) => {
+//       console.log(object);
+//       let date = new Date(object.date);
+//       let fullDate = `${date.getDate()}-${date.getMonth() +
+//         1}-${date.getFullYear()}`;
+//       let time = `${date.getHours()}:${date.getMinutes()}`;
+//       return [
+//         <tr key={i}>
+//           <th scope="col">{i + 1}</th>
+//           {/* <td>{object.laundry.name}</td> */}
+//           <td>{time}</td>
+//           <td>{fullDate}</td>
+//           <td>{object.service}</td>
+//         </tr>
+//       ];
+//     });
+// }
