@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory, useLocation, Link } from "react-router-dom";
 
 import {
@@ -13,18 +13,23 @@ import {
   MDBAlert
 } from "mdbreact";
 
+import Swal from "sweetalert";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import axios from "axios";
 import { clientAuth } from "./clientAuth";
+import { UserContext } from "./UserContext";
 
 const URI = process.env.REACT_APP_API_URI;
 
 function Login() {
+  let [userContext, setUserContext] = useContext(UserContext);
+
   let history = useHistory();
   let location = useLocation();
 
   let { from } = location.state || { from: { pathname: "/" } };
+
   let login = () => {
     clientAuth.authenticate(() => {
       history.replace(from);
@@ -56,12 +61,16 @@ function Login() {
       axios
         .post(URI + "/users/login", newUser)
         .then(result => {
-          setNewUser(result);
+          setNewUser(result.data.existedUser);
+          setUserContext(result.data.existedUser);
           login();
+          Swal("Good job!", "Login Success!", "success");
         })
         .catch(error => setError(error.message));
     }
   };
+
+  console.log(userContext);
 
   return (
     <div>
@@ -82,7 +91,10 @@ function Login() {
               <h3 className="white-text mb-3 pt-3 font-weight-bold">Log in</h3>
             </MDBRow>
             <MDBRow className="mt-2 mb-3 d-flex justify-content-center">
-              <a href="https://www.instagram.com/dianpus86/" className="fa-lg p-2 m-2 fb-ic">
+              <a
+                href="https://www.instagram.com/dianpus86/"
+                className="fa-lg p-2 m-2 fb-ic"
+              >
                 <MDBIcon
                   fab
                   icon="instagram"
@@ -90,10 +102,16 @@ function Login() {
                   className="white-text"
                 />
               </a>
-              <a href="https://twitter.com/dianpus86" className="fa-lg p-2 m-2 tw-ic">
+              <a
+                href="https://twitter.com/dianpus86"
+                className="fa-lg p-2 m-2 tw-ic"
+              >
                 <MDBIcon fab className="fa-twitter white-text fa-lg" />
               </a>
-              <a href="https://www.facebook.com/dianpus86" className="fa-lg p-2 m-2 gplus-ic">
+              <a
+                href="https://www.facebook.com/dianpus86"
+                className="fa-lg p-2 m-2 gplus-ic"
+              >
                 <MDBIcon fab className="fa-facebook g white-text fa-lg" />
               </a>
             </MDBRow>

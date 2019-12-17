@@ -4,6 +4,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import axios from "axios";
+import Swal from "sweetalert";
 
 const URI = process.env.REACT_APP_API_URI;
 class Register extends React.Component {
@@ -34,12 +35,15 @@ class Register extends React.Component {
       emailConfirm,
       ...otherState
     } = this.state;
+    console.log(otherState);
     axios
       .post(URI + "/users/register", otherState)
       .then(result => {
         // this.setState.isMounted = true;
+        console.log(result);
         if (result.status === 200) {
           this.props.history.push("/login");
+          Swal("Good job!", "Register Success", "success");
         }
         this.setState({
           name: "",
@@ -50,7 +54,10 @@ class Register extends React.Component {
           telephone: ""
         });
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error);
+        Swal("Oops", "Username or email not valid", "error");
+      });
   }
 
   // componentWillUnmount() {
