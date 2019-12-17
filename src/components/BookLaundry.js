@@ -150,7 +150,7 @@ class BookLaundry extends Component {
                           disabled
                           min={0}
                           max={5}
-                          label="amount"
+                          label="Amount"
                           name="amount"
                           onChange={this.onChange}
                           value={this.state.amount}
@@ -169,6 +169,13 @@ class BookLaundry extends Component {
                         label="Note"
                         outline
                         name="note"
+                        onChange={this.onChange}
+                      />
+                      <MDBInput
+                        type="textarea"
+                        label="Pickup and Delivery Address"
+                        outline
+                        name="address"
                         onChange={this.onChange}
                       />
                     </MDBModalBody>
