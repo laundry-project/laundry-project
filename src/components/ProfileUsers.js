@@ -1,9 +1,7 @@
-import React, { Component, useState, useContext } from "react";
-import { connect } from "react-redux";
+import React, { useState, useContext } from "react";
 
 import { UserContext } from "./UserContext";
 
-// import { idUser } from "../store/actions";
 import {
   MDBBtn,
   MDBCard,
