@@ -61,7 +61,10 @@ function Login() {
       axios
         .post(URI + "/users/login", newUser)
         .then(result => {
-          setNewUser(result.data.existedUser);
+          // localStorage.setItem("isLoggedIn", JSON.stringify(true));
+          console.log("hallo")
+
+          // setNewUser(result.data.existedUser);
           setUserContext(result.data.existedUser);
           login();
           Swal("Good job!", "Login Success!", "success");
@@ -69,8 +72,6 @@ function Login() {
         .catch(error => setError(error.message));
     }
   };
-
-  console.log(userContext);
 
   return (
     <div>

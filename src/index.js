@@ -23,7 +23,7 @@ import BookLaundry from "./components/BookLaundry";
 import * as serviceWorker from "./serviceWorker";
 import ContactUs from "./components/ContactUs";
 import History from "./components/History";
-import UserProvider from "./components/UserContext";
+import {UserProvider} from "./components/UserContext";
 
 ReactDOM.render(
   <UserProvider>

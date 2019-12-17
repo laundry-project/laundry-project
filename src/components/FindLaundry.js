@@ -67,7 +67,9 @@ const FindLaundry = () => {
                   <br />
                   Telepon : (021) 29465000
                 </p>
-                <BookLaundry />
+                <ServiceProvider>
+                  <BookLaundry />
+                </ServiceProvider>
               </MDBCol>
             </MDBRow>
           </MDBCol>
@@ -92,7 +94,9 @@ const FindLaundry = () => {
                   <br />
                   Telepon : (021) 56989999
                 </p>
-                <BookLaundry />
+                <ServiceProvider>
+                  <BookLaundry />
+                </ServiceProvider>
               </MDBCol>
             </MDBRow>
           </MDBCol>

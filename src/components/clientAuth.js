@@ -1,5 +1,5 @@
 export const clientAuth = {
-  isAuthenticated: localStorage.getItem("isLoggedIn") || false,
+  isAuthenticated: JSON.parse(localStorage.getItem("isLoggedIn")) || false,
   authenticate(cb) {
     clientAuth.isAuthenticated = true;
     setTimeout(cb, 100);
