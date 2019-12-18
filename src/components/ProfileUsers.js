@@ -1,7 +1,8 @@
-import React, { Component, useState, useContext } from "react";
-import { connect } from "react-redux";
+import React, { useState, useEffect, useContext } from "react";
 
 import { UserContext } from "./UserContext";
+import { ServiceContext } from "./ServiceContext";
+import axios from "axios";
 
 // import { idUser } from "../store/actions";
 import {
@@ -12,40 +13,33 @@ import {
   MDBCardTitle,
   MDBCardText,
   MDBRow,
-  MDBCol,
-  MDBTable,
-  MDBTableBody,
-  MDBTableHead,
-  MDBCollapse
+  MDBCol
 } from "mdbreact";
+
+const URI = process.env.REACT_APP_API_URI;
 
 function ProfileUser() {
   let [userContext, setUserContext] = useContext(UserContext);
+  let [order, setOrder] = useState([]);
 
-  let [toggle, setToggle] = useState({
-    show: false,
-    collapseID: ""
-  });
+  useEffect(() => {
+    axios
+      .get(URI + "/users/" + userContext._id)
+      .then(result => {
+        console.log(result);
+        // if (result.status === 200) {
+        //   this.props.history.push("/login");
+        // }
+        setOrder(result.data.result.orders);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { show: false, collapseID: "" };
-  // }
-
-  // componentDidMount() {
-  //   // this.props.getUserAction(this.props.history);
-  // }
-
-  const toggleCollapse = collapseID => () => {
-    setToggle(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-    }));
-  };
-
-  // render() {
-  //   console.log(this.state);
-  //   console.log(this.props);
   console.log(userContext);
+  console.log(order);
+
   return (
     <MDBRow className="mx-auto w-50 mt-5">
       <MDBCol className="text-center">
@@ -65,31 +59,14 @@ function ProfileUser() {
               <h3>Name : {userContext.name}</h3>
               <h3>Email : {userContext.email}</h3>
               <h3>Telephone : {userContext.telephone}</h3>
+
+              {order.map(item => (
+                <h3>
+                  {item.service} - {item.amount} - {item.date} - {item.address}{" "}
+                  - {item.price}
+                </h3>
+              ))}
             </MDBCardText>
-
-            <MDBBtn
-              color="primary"
-              href="!#"
-              onClick={toggleCollapse("basicCollapse")}
-              style={{ marginBottom: "1rem" }}
-            >
-              History Order
-            </MDBBtn>
-
-            <MDBCollapse id="basicCollapse" isOpen={toggle.collapseID}>
-              <MDBTable>
-                <MDBTableHead>
-                  <tr>
-                    <th>No</th>
-                    {/* <th>Laundry</th> */}
-                    <th>Time</th>
-                    <th>Date</th>
-                    <th>Service</th>
-                  </tr>
-                </MDBTableHead>
-                <MDBTableBody></MDBTableBody>
-              </MDBTable>
-            </MDBCollapse>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
@@ -99,21 +76,3 @@ function ProfileUser() {
 }
 
 export default ProfileUser;
-
-// {Array.isArray(this.props.userData.order) &&
-//   this.props.userData.order.map((object, i) => {
-//     console.log(object);
-//     let date = new Date(object.date);
-//     let fullDate = `${date.getDate()}-${date.getMonth() +
-//       1}-${date.getFullYear()}`;
-//     let time = `${date.getHours()}:${date.getMinutes()}`;
-//     return [
-//       <tr key={i}>
-//         <th scope="col">{i + 1}</th>
-//         {/* <td>{object.laundry.name}</td> */}
-//         <td>{time}</td>
-//         <td>{fullDate}</td>
-//         <td>{object.service}</td>
-//       </tr>
-//     ];
-//   })}
