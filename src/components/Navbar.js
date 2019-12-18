@@ -80,10 +80,10 @@ function Navbar() {
             ) : (
               <React.Fragment>
                 <Link to="/register">
-                  <MDBBtn color="green">Register</MDBBtn>
+                  <MDBBtn color="blue">Register</MDBBtn>
                 </Link>
                 <Link to="/login">
-                  <MDBBtn color="pink">Login</MDBBtn>
+                  <MDBBtn color="blue">Login</MDBBtn>
                 </Link>
               </React.Fragment>
             )}

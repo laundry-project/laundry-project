@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
+import { MDBContainer, MDBRow, MDBBtn, MDBInput, MDBCard, MDBCardBody } from "mdbreact";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import axios from "axios";
@@ -64,12 +64,18 @@ class Register extends React.Component {
     return (
       <div>
         <Navbar />
-        <MDBContainer className="mt-5 display-flex justify-content-center align-items-right ">
+        <MDBContainer className="mt-5 display-flex justify-content-center align-items-center w-50 ">
+          <MDBCard>
+          <div className="header pt-3 blue">
+            <MDBRow className="d-flex justify-content-center">
+              <h3 className="white-text mb-3 pt-3 font-weight-bold">Sign Up</h3>
+            </MDBRow>
+            <MDBRow className="mt-2 mb-3 d-flex justify-content-center">
+            </MDBRow>
+          </div>
           <MDBRow>
-            <MDBCol md="6">
+            <MDBCardBody className = "mx-4 mt-4">
               <form>
-                <p className="h5 text-center mb-4 mt-5 mr-5">Sign up</p>
-
                 <div className="grey-text">
                   <MDBInput
                     label="Your name"
@@ -142,13 +148,14 @@ class Register extends React.Component {
                 </div>
 
                 <div className="text-center">
-                  <MDBBtn color="primary" onClick={this.onRegister}>
+                  <MDBBtn color="blue" onClick={this.onRegister}>
                     Register
                   </MDBBtn>
                 </div>
               </form>
-            </MDBCol>
+            </MDBCardBody>
           </MDBRow>
+          </MDBCard>
         </MDBContainer>
         <Footer />
       </div>

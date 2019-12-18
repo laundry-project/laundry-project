@@ -9,7 +9,7 @@ import {
   MDBCardBody,
   MDBInput,
   MDBBtn,
-  MDBIcon,
+  // MDBIcon,
   MDBAlert
 } from "mdbreact";
 
@@ -92,29 +92,6 @@ function Login() {
               <h3 className="white-text mb-3 pt-3 font-weight-bold">Log in</h3>
             </MDBRow>
             <MDBRow className="mt-2 mb-3 d-flex justify-content-center">
-              <a
-                href="https://www.instagram.com/dianpus86/"
-                className="fa-lg p-2 m-2 fb-ic"
-              >
-                <MDBIcon
-                  fab
-                  icon="instagram"
-                  size="lg"
-                  className="white-text"
-                />
-              </a>
-              <a
-                href="https://twitter.com/dianpus86"
-                className="fa-lg p-2 m-2 tw-ic"
-              >
-                <MDBIcon fab className="fa-twitter white-text fa-lg" />
-              </a>
-              <a
-                href="https://www.facebook.com/dianpus86"
-                className="fa-lg p-2 m-2 gplus-ic"
-              >
-                <MDBIcon fab className="fa-facebook g white-text fa-lg" />
-              </a>
             </MDBRow>
           </div>
           <MDBCardBody className="mx-4 mt-4">
@@ -141,7 +118,7 @@ function Login() {
               <MDBCol md="5" className="d-flex align-items-start">
                 <div className="text-center">
                   <MDBBtn
-                    color="grey"
+                    color="blue"
                     rounded
                     type="button"
                     className="z-depth-1a"
