@@ -14,7 +14,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import About from "./About";
 import LogoLaundry from "../components/images/logolaundry.jpg";
-// import { Icon } from "semantic-ui-react";
+
 import { clientAuth } from "./clientAuth";
 
 const Home = () => {
