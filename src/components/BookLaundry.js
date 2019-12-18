@@ -140,7 +140,7 @@ class BookLaundry extends Component {
                     <MDBBtn onClick={this.toggle}>Order</MDBBtn>
                     <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                       <MDBModalHeader toggle={this.toggle}>
-                        Please fill in your order
+                        Hello, Please fill in your order
                       </MDBModalHeader>
 
                       <MDBModalBody>
