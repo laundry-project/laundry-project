@@ -77,7 +77,7 @@ function ProfileUser() {
                       <td>{item.date}</td>
                       <td>{item.service}</td>
                       <td>{item.amount}</td>
-                      <td>{item.price}</td>
+                      <td> {item.price}</td>
                       <td>{item.address}</td>
                     </tr>
                   ))}
