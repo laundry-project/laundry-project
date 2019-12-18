@@ -1,22 +1,20 @@
-<<<<<<< HEAD
-import React, { useState, useContext } from "react";
-=======
 import React, { useState, useEffect, useContext } from "react";
->>>>>>> robyAfrizal
 
 import { UserContext } from "./UserContext";
 import { ServiceContext } from "./ServiceContext";
 import axios from "axios";
 
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
   MDBCardImage,
   MDBCardTitle,
   MDBCardText,
   MDBRow,
-  MDBCol
+  MDBCol,
+  MDBTable,
+  MDBTableBody,
+  MDBTableHead
 } from "mdbreact";
 
 const URI = process.env.REACT_APP_API_URI;
@@ -25,18 +23,6 @@ function ProfileUser() {
   let [userContext, setUserContext] = useContext(UserContext);
   let [order, setOrder] = useState([]);
 
-<<<<<<< HEAD
-  let [toggle, setToggle] = useState({
-    show: false,
-    collapseID: ""
-  });
-
-  const toggleCollapse = collapseID => () => {
-    setToggle(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-    }));
-  };
-=======
   useEffect(() => {
     axios
       .get(URI + "/users/" + userContext._id)
@@ -51,7 +37,6 @@ function ProfileUser() {
         console.log(error);
       });
   }, []);
->>>>>>> robyAfrizal
 
   console.log(userContext);
   console.log(order);
@@ -76,12 +61,28 @@ function ProfileUser() {
               <h3>Email : {userContext.email}</h3>
               <h3>Telephone : {userContext.telephone}</h3>
 
-              {order.map(item => (
-                <h3>
-                  {item.service} - {item.amount} - {item.date} - {item.address}{" "}
-                  - {item.price}
-                </h3>
-              ))}
+              <MDBTable bordered>
+                <MDBTableHead color="primary-color">
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Service</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Address</th>
+                  </tr>
+                </MDBTableHead>
+                <MDBTableBody>
+                  {order.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.date}</td>
+                      <td>{item.service}</td>
+                      <td>{item.amount}</td>
+                      <td>{item.price}</td>
+                      <td>{item.address}</td>
+                    </tr>
+                  ))}
+                </MDBTableBody>
+              </MDBTable>
             </MDBCardText>
           </MDBCardBody>
         </MDBCard>
@@ -92,26 +93,3 @@ function ProfileUser() {
 }
 
 export default ProfileUser;
-<<<<<<< HEAD
-
-// {
-//   Array.isArray(this.props.userData.order) &&
-//     this.props.userData.order.map((object, i) => {
-//       console.log(object);
-//       let date = new Date(object.date);
-//       let fullDate = `${date.getDate()}-${date.getMonth() +
-//         1}-${date.getFullYear()}`;
-//       let time = `${date.getHours()}:${date.getMinutes()}`;
-//       return [
-//         <tr key={i}>
-//           <th scope="col">{i + 1}</th>
-//           {/* <td>{object.laundry.name}</td> */}
-//           <td>{time}</td>
-//           <td>{fullDate}</td>
-//           <td>{object.service}</td>
-//         </tr>
-//       ];
-//     });
-// }
-=======
->>>>>>> robyAfrizal
