@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import React, { useState, useContext } from "react";
+=======
+import React, { useState, useEffect, useContext } from "react";
+>>>>>>> robyAfrizal
 
 import { UserContext } from "./UserContext";
+import { ServiceContext } from "./ServiceContext";
+import axios from "axios";
 
 import {
   MDBBtn,
@@ -10,16 +16,16 @@ import {
   MDBCardTitle,
   MDBCardText,
   MDBRow,
-  MDBCol,
-  MDBTable,
-  MDBTableBody,
-  MDBTableHead,
-  MDBCollapse
+  MDBCol
 } from "mdbreact";
+
+const URI = process.env.REACT_APP_API_URI;
 
 function ProfileUser() {
   let [userContext, setUserContext] = useContext(UserContext);
+  let [order, setOrder] = useState([]);
 
+<<<<<<< HEAD
   let [toggle, setToggle] = useState({
     show: false,
     collapseID: ""
@@ -30,8 +36,26 @@ function ProfileUser() {
       collapseID: prevState.collapseID !== collapseID ? collapseID : ""
     }));
   };
+=======
+  useEffect(() => {
+    axios
+      .get(URI + "/users/" + userContext._id)
+      .then(result => {
+        console.log(result);
+        // if (result.status === 200) {
+        //   this.props.history.push("/login");
+        // }
+        setOrder(result.data.result.orders);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
+>>>>>>> robyAfrizal
 
   console.log(userContext);
+  console.log(order);
+
   return (
     <MDBRow className="mx-auto w-50 mt-5">
       <MDBCol className="text-center">
@@ -51,31 +75,14 @@ function ProfileUser() {
               <h3>Name : {userContext.name}</h3>
               <h3>Email : {userContext.email}</h3>
               <h3>Telephone : {userContext.telephone}</h3>
+
+              {order.map(item => (
+                <h3>
+                  {item.service} - {item.amount} - {item.date} - {item.address}{" "}
+                  - {item.price}
+                </h3>
+              ))}
             </MDBCardText>
-
-            <MDBBtn
-              color="primary"
-              href="!#"
-              onClick={toggleCollapse("basicCollapse")}
-              style={{ marginBottom: "1rem" }}
-            >
-              History Order
-            </MDBBtn>
-
-            <MDBCollapse id="basicCollapse" isOpen={toggle.collapseID}>
-              <MDBTable>
-                <MDBTableHead>
-                  <tr>
-                    <th>No</th>
-                    {/* <th>Laundry</th> */}
-                    <th>Time</th>
-                    <th>Date</th>
-                    <th>Service</th>
-                  </tr>
-                </MDBTableHead>
-                <MDBTableBody></MDBTableBody>
-              </MDBTable>
-            </MDBCollapse>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
@@ -85,6 +92,7 @@ function ProfileUser() {
 }
 
 export default ProfileUser;
+<<<<<<< HEAD
 
 // {
 //   Array.isArray(this.props.userData.order) &&
@@ -105,3 +113,5 @@ export default ProfileUser;
 //       ];
 //     });
 // }
+=======
+>>>>>>> robyAfrizal

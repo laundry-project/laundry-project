@@ -60,10 +60,6 @@ class Register extends React.Component {
       });
   }
 
-  // componentWillUnmount() {
-  //   this.setState.isMounted = false;
-  // }
-
   render() {
     return (
       <div>
