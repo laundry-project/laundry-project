@@ -33,7 +33,7 @@ function Navbar() {
 
   return (
     <div>
-      <MDBNavbar color="white" dark expand="md">
+      <MDBNavbar color="white" dark expand="md" style={{ fontSize: "22px" }}>
         <MDBNavbarToggler onClick={toggleCollapse} />
         <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
           <MDBNavbarNav left>
@@ -49,27 +49,48 @@ function Navbar() {
           </MDBNavbarNav>
           <MDBNavbarNav right>
             <MDBNavItem>
-              <MDBNavLink active to="/" className="black-text">
+              <MDBNavLink
+                active
+                to="/"
+                className="black-text"
+                style={{ marginTop: "13px", marginRight: "20px" }}
+              >
                 <strong>Home</strong>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/services" className="black-text">
+              <MDBNavLink
+                to="/services"
+                className="black-text"
+                style={{ marginTop: "13px", marginRight: "20px" }}
+              >
                 <strong>Services</strong>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/ContactUs" className="black-text">
+              <MDBNavLink
+                to="/ContactUs"
+                className="black-text"
+                style={{ marginTop: "13px", marginRight: "20px" }}
+              >
                 <strong>Testimonials</strong>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/History" className="black-text">
+              <MDBNavLink
+                to="/History"
+                className="black-text"
+                style={{ marginTop: "13px", marginRight: "20px" }}
+              >
                 <strong>History</strong>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/Profile" className="black-text">
+              <MDBNavLink
+                to="/Profile"
+                className="black-text"
+                style={{ marginTop: "13px", marginRight: "20px" }}
+              >
                 <strong>Profile</strong>
               </MDBNavLink>
             </MDBNavItem>
@@ -80,10 +101,20 @@ function Navbar() {
             ) : (
               <React.Fragment>
                 <Link to="/register">
-                  <MDBBtn color="blue">Register</MDBBtn>
+                  <MDBBtn
+                    color="blue"
+                    style={{ fontSize: "18px", marginRight: "20px" }}
+                  >
+                    Register
+                  </MDBBtn>
                 </Link>
                 <Link to="/login">
-                  <MDBBtn color="blue">Login</MDBBtn>
+                  <MDBBtn
+                    color="blue"
+                    style={{ fontSize: "18px", marginRight: "20px" }}
+                  >
+                    Login
+                  </MDBBtn>
                 </Link>
               </React.Fragment>
             )}

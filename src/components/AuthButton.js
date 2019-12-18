@@ -9,7 +9,7 @@ function AuthButton() {
 
   return clientAuth.isAuthenticated ? (
     <MDBAlert color="primary">
-      Welcome to Laundry Page!
+      <h1>Welcome to Laundry Komodo!</h1>
       {/* <button
         onClick={() => {
           clientAuth.signout(() => history.push("/"));
@@ -19,8 +19,8 @@ function AuthButton() {
       </button> */}
     </MDBAlert>
   ) : (
-    <MDBAlert color="danger">
-      <h3>You are not logged in.</h3>
+    <MDBAlert color="primary">
+      <h1>You are not logged in.</h1>
     </MDBAlert>
   );
 }
