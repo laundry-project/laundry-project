@@ -18,6 +18,7 @@ import About from "./components/About";
 import FindLaundry from "./components/FindLaundry";
 import Register from "./components/Register";
 import BookLaundry from "./components/BookLaundry";
+import ContactUs from "./components/ContactUs";
 import * as serviceWorker from "./serviceWorker";
 import History from "./components/History";
 import { UserProvider } from "./components/UserContext";
@@ -47,6 +48,9 @@ ReactDOM.render(
         </Route>
         <PrivateRoute path="/BookLaundry">
           <BookLaundry />
+        </PrivateRoute>
+        <PrivateRoute path="/COntactUs">
+          <ContactUs />
         </PrivateRoute>
         <PrivateRoute path="/History">
           <History />
