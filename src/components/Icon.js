@@ -24,6 +24,7 @@ const Icon = () => {
           <MDBIcon fab icon="react" size="5x" className="blue-text" />
           <h5 className="font-weight-bold my-4">REACT</h5>
         </MDBCol>
+
         <MDBCol md="2">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Ro12vttydRIaaIXk7CYa__gVR5UeBg1XJnqyb84vrnTShaqB&s"
@@ -34,30 +35,32 @@ const Icon = () => {
           <br/>
           <h5 className="font-weight-bold my-4">EXPRESS</h5>
         </MDBCol>
+
         <MDBCol md="2">
           <img
-            src="https://logodix.com/logo/812688.png"
-            style={{ width: "250px", marginBottom: "100px" }}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1280px-Git-logo.svg.png"
+            style={{ width: "100px", marginBottom:"30px" }}
             alt=""
           />
+          
           <h5 className="font-weight-bold my-4">GIT</h5>
         </MDBCol>
+
         <MDBCol md="2">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfp4wSS8UwsjT77aQIfPhs9Plr0b1JrQYBuPf8Q0mgACIu6wkb&s"
             style={{ width: "180px" }}
             alt=""
           />
-          <h5 className="font-weight-bold my-4">MONGO DB</h5>
+          <h5 className="font-weight-bold my-4" style= {{marginBottom:"10px"}}>MONGO DB</h5>
         </MDBCol>
         <MDBCol md="2">
           <img
-            src="https://pbs.twimg.com/profile_images/946432748276740096/0TXzZU7W.jpg"
-            style={{ width: "150px", marginBottom:"100px"}}
+            src="https://images.opencollective.com/proxy/images?src=https%3A%2F%2Fopencollective-production.s3-us-west-1.amazonaws.com%2F7a00cdd0-fae4-11e7-ae09-7f36f712693a.png&height=640"
+            style={{ width: "100px", marginBottom:"20px"}}
             alt=""
           />
-          <br/>
-          <h5 className="font-weight-bold my-4">MONGOOSE</h5>
+          <h5 className="font-weight-bold my-4" style= {{marginBottom:"60px"}}>MONGOOSE</h5>
           </MDBCol>
         <MDBCol md="2">
           <img
@@ -87,6 +90,7 @@ const Icon = () => {
           />
           <h5 className="font-weight-bold my-4">SEMANTIC</h5>
         </MDBCol>
+
       </MDBRow>
     </section>
   );
