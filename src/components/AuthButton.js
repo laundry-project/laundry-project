@@ -19,9 +19,7 @@ function AuthButton() {
       </button> */}
     </MDBAlert>
   ) : (
-    <MDBAlert color="primary">
-      <h1>You are not logged in.</h1>
-    </MDBAlert>
+    <MDBAlert color="primary">{/* <h1>You are not logged in.</h1> */}</MDBAlert>
   );
 }
 
