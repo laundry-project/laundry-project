@@ -69,7 +69,7 @@ function Navbar() {
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink
-                to="/ContactUs"
+                to="/Testimonials"
                 className="black-text"
                 style={{ marginTop: "13px", marginRight: "20px" }}
               >

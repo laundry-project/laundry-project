@@ -18,10 +18,10 @@ import About from "./components/About";
 import FindLaundry from "./components/FindLaundry";
 import Register from "./components/Register";
 import BookLaundry from "./components/BookLaundry";
+import Testimonials from "./components/Testimonials";
 import * as serviceWorker from "./serviceWorker";
-import ContactUs from "./components/ContactUs";
 import History from "./components/History";
-import {UserProvider} from "./components/UserContext";
+import { UserProvider } from "./components/UserContext";
 
 ReactDOM.render(
   <UserProvider>
@@ -40,24 +40,24 @@ ReactDOM.render(
         <PrivateRoute path="/price">
           <Price />
         </PrivateRoute>
-        <PrivateRoute path="/about">
+        <Route path="/about">
           <About />
-        </PrivateRoute>
-        <PrivateRoute path="/FindLaundry">
+        </Route>
+        <Route path="/FindLaundry">
           <FindLaundry />
-        </PrivateRoute>
+        </Route>
         <PrivateRoute path="/BookLaundry">
           <BookLaundry />
         </PrivateRoute>
-        <PrivateRoute path="/ContactUs">
-          <ContactUs />
-        </PrivateRoute>
+        <Route path="/Testimonials">
+          <Testimonials />
+        </Route>
         <PrivateRoute path="/History">
           <History />
         </PrivateRoute>
-        <PrivateRoute path="/Profile">
+        <Route path="/Profile">
           <Profile />
-        </PrivateRoute>
+        </Route>
         <Route path="/register">
           <Register />
         </Route>
