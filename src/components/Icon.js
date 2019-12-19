@@ -1,6 +1,5 @@
 import React from "react";
 import { MDBRow, MDBCol, MDBIcon } from "mdbreact";
-import LogoImpact from '../components/images/impactbyte.png';
 
 const Icon = () => {
   return (
@@ -92,14 +91,6 @@ const Icon = () => {
           <h5 className="font-weight-bold my-4">SEMANTIC</h5>
         </MDBCol>
 
-        {/* <MDBCol >
-          <img
-            src={LogoImpact}
-            style={{ width: "300px", marginTop:"150px"}}
-            alt=""
-          />
-          <h5 className="font-weight-bold my-4">IMPACT BYTE</h5>
-        </MDBCol> */}
       </MDBRow>
     </section>
   );
