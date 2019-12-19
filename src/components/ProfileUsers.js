@@ -22,7 +22,7 @@ import {
   MDBModalFooter
 } from "mdbreact";
 
-const URI = process.env.REACT_APP_API_URI;
+import {URI} from '../helpers/envPath';
 
 function ProfileUser() {
   let [userContext, setUserContext] = useContext(UserContext);

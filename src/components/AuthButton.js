@@ -1,25 +1,24 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-import { clientAuth } from "./clientAuth";
-
+import React, { useContext } from "react";
 import { MDBAlert } from "mdbreact";
 
-function AuthButton() {
-  let history = useHistory();
+import { clientAuth } from "./clientAuth";
+import { UserContext } from "./UserContext";
 
-  return clientAuth.isAuthenticated ? (
-    <MDBAlert color="primary">
-      <h1>Welcome to Laundry Komodo!</h1>
-      {/* <button
-        onClick={() => {
-          clientAuth.signout(() => history.push("/"));
-        }}
-      >
-        Sign out
-      </button> */}
-    </MDBAlert>
-  ) : (
-    <MDBAlert color="primary">{/* <h1>You are not logged in.</h1> */}</MDBAlert>
+function AuthButton() {
+  const [user] = useContext(UserContext);
+  const nameFromLocalStorage = JSON.parse(localStorage.getItem("user"));
+  return (
+    clientAuth.isAuthenticated && (
+      <MDBAlert color="primary" className="text-center">
+        <h1>
+          Welcome{" "}
+          {user.name
+            ? user.name.toUpperCase()
+            : nameFromLocalStorage.toUpperCase()}{" "}
+          to Laundry Komodo!
+        </h1>
+      </MDBAlert>
+    )
   );
 }
 

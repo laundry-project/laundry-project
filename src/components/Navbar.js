@@ -95,7 +95,11 @@ function Navbar() {
               </MDBNavLink>
             </MDBNavItem>
             {clientAuth.isAuthenticated ? (
-              <MDBBtn color="blue" onClick={logout}>
+              <MDBBtn
+                color="blue"
+                onClick={logout}
+                style={{ fontSize: "18px" }}
+              >
                 Logout
               </MDBBtn>
             ) : (

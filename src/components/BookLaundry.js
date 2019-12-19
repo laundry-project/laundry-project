@@ -9,15 +9,17 @@ import {
   MDBModalHeader,
   MDBModalFooter,
   MDBInput,
-  MDBBtn
+  MDBBtn,
+  MDBCol,
+  MDBRow
 } from "mdbreact";
 import Swal from "sweetalert";
 import axios from "axios";
 
+import "../assets/styles/bookLaundry.css";
 import { ServiceContext } from "./ServiceContext";
 import { UserContext } from "./UserContext";
-
-const URI = process.env.REACT_APP_API_URI;
+import { URI } from "../helpers/envPath";
 class BookLaundry extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +30,8 @@ class BookLaundry extends Component {
       amount: 0,
       price: 0,
       note: "",
-      address: ""
+      address: "",
+      pickUpTime: ""
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -139,16 +142,32 @@ class BookLaundry extends Component {
                   <MDBContainer>
                     <MDBBtn onClick={this.toggle}>Order</MDBBtn>
                     <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-                      <MDBModalHeader toggle={this.toggle}>
-                        Hello, Please fill in your order
+                      <MDBModalHeader className="justify-content-center">
+                        Welcome to {this.props.laundryName}
+                        <br />
+                        Please fill in your order
                       </MDBModalHeader>
 
                       <MDBModalBody>
-                        <input
-                          type="date"
-                          name="date"
-                          onChange={this.onChange}
-                        />
+                        <MDBRow>
+                          <MDBCol>
+                            <MDBInput
+                              label="Pick Up Date"
+                              type="date"
+                              name="date"
+                              onChange={this.onChange}
+                            />
+                          </MDBCol>
+                          <MDBCol>
+                            <MDBInput
+                              type="time"
+                              label="Pick Up Time"
+                              outline
+                              name="pickUpTime"
+                              onChange={this.onChange}
+                            />
+                          </MDBCol>
+                        </MDBRow>
                         <Dropdown
                           placeholder="Service type"
                           fluid
@@ -158,20 +177,29 @@ class BookLaundry extends Component {
                           onChange={this.onServiceHandle}
                         />
 
-                        <div>
-                          <MDBInput
+                        {/* ini yang baru */}
+                        <div className="def-number-input number-input">
+                          <button
+                            onClick={this.reduceBtn}
+                            className="minus"
+                          ></button>
+                          <input
+                            className="quantity"
+                            name="amount"
+                            value={this.state.amount}
+                            onChange={this.onChange}
                             type="number"
                             disabled
                             min={0}
                             max={5}
-                            label="Amount"
-                            name="amount"
-                            onChange={this.onChange}
-                            value={this.state.amount}
                           />
-                          <button onClick={this.btnAdd}>+</button>
-                          <button onClick={this.reduceBtn}>-</button>
+                          <span>kg</span>
+                          <button
+                            onClick={this.btnAdd}
+                            className="plus"
+                          ></button>
                         </div>
+                        {/* ------------ */}
 
                         <MDBInput
                           label="Price"

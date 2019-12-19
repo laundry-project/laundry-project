@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import axios from "axios";
 import Swal from "sweetalert";
 
-const URI = process.env.REACT_APP_API_URI;
+import {URI} from '../helpers/envPath';
 class Register extends React.Component {
   constructor(props) {
     super(props);

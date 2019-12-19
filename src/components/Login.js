@@ -20,7 +20,7 @@ import axios from "axios";
 import { clientAuth } from "./clientAuth";
 import { UserContext } from "./UserContext";
 
-const URI = process.env.REACT_APP_API_URI;
+import { URI } from "../helpers/envPath";
 
 function Login() {
   let [userContext, setUserContext] = useContext(UserContext);
@@ -51,20 +51,18 @@ function Login() {
 
   const onLogin = e => {
     e.preventDefault();
-    console.log(newUser);
     if (newUser.email === "" && newUser.password === "") {
-      console.log("Can not Empty");
-      setError("NULL INPUT");
-      console.log(error);
+      Swal("Field Cannot Be Empty!", "", "warning");
+      setError("Username or Password Field cannot be empty");
     } else {
-      console.log(newUser);
       axios
         .post(URI + "/users/login", newUser)
         .then(result => {
-          // localStorage.setItem("isLoggedIn", JSON.stringify(true));
-          console.log("hallo")
-
-          // setNewUser(result.data.existedUser);
+          localStorage.setItem("isLoggedIn", JSON.stringify(true));
+          localStorage.setItem(
+            "user",
+            JSON.stringify(result.data.existedUser.name)
+          );
           setUserContext(result.data.existedUser);
           login();
           Swal("Good job!", "Login Success!", "success");
@@ -91,8 +89,7 @@ function Login() {
             <MDBRow className="d-flex justify-content-center">
               <h3 className="white-text mb-3 pt-3 font-weight-bold">Log in</h3>
             </MDBRow>
-            <MDBRow className="mt-2 mb-3 d-flex justify-content-center">
-            </MDBRow>
+            <MDBRow className="mt-2 mb-3 d-flex justify-content-center"></MDBRow>
           </div>
           <MDBCardBody className="mx-4 mt-4">
             <MDBInput
