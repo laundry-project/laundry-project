@@ -26,19 +26,21 @@ const Icon = () => {
         </MDBCol>
         <MDBCol md="2">
           <img
-            src="https://seeklogo.com/images/G/google-maps-2014-logo-6108508C7B-seeklogo.com.png"
-            style={{ width: "70px" }}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Ro12vttydRIaaIXk7CYa__gVR5UeBg1XJnqyb84vrnTShaqB&s"
+            style={{ width: "200px" }}
             alt=""
           />
-          <h5 className="font-weight-bold my-4">GOOGLE MAP</h5>
+          <br/>
+          <br/>
+          <h5 className="font-weight-bold my-4">EXPRESS</h5>
         </MDBCol>
         <MDBCol md="2">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxcfXRuhD8Es5FkXx8gMjjGIriEIU1Dlj4OD92_5cfKsztLdBRrQ&s"
-            style={{ width: "70px" }}
+            src="https://logodix.com/logo/812688.png"
+            style={{ width: "250px", marginBottom: "100px" }}
             alt=""
           />
-          <h5 className="font-weight-bold my-4">REDUX</h5>
+          <h5 className="font-weight-bold my-4">GIT</h5>
         </MDBCol>
         <MDBCol md="2">
           <img
@@ -50,11 +52,10 @@ const Icon = () => {
         </MDBCol>
         <MDBCol md="2">
           <img
-            src="https://www.trzcacak.rs/myfile/full/220-2209854_mongoose-logo-png-transparent-kokoriko-logo-2018.png"
-            style={{ width: "230px", marginTop:"5px"}}
+            src="https://pbs.twimg.com/profile_images/946432748276740096/0TXzZU7W.jpg"
+            style={{ width: "150px", marginBottom:"100px"}}
             alt=""
           />
-          <br/>
           <br/>
           <h5 className="font-weight-bold my-4">MONGOOSE</h5>
           </MDBCol>
